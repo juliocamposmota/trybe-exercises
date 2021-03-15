@@ -3,9 +3,5 @@ O que vou aprender na Trybe:
 - Unix
 - Bash
 - Git
-- HTML
-- CSS
 - JavaScript
 - Python
-- Metodologia Ágil
-- Trabalho em equipe
