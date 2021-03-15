@@ -5,7 +5,3 @@ O que vou aprender na Trybe:
 - Git
 - HTML
 - CSS
-- JavaScript
-- Python
-- Metodologia Ágil
-- Trabalho em equipe
