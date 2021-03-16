@@ -1,0 +1,7 @@
+O que acontece após digitarmos google.com no nosso navegador?
+
+1 - O Cliente envia uma requisição ao servidor via protocolo HTTP.
+2 - O DNS traduz o domínio em endereço IP.
+3 - O Servidor recebe e processa a requisição.
+4 - O Servidor envia uma resposta ao Cliente via protocolo HTTP, podendo ser 200 ou 404.
+5 - O navegador renderiza a resposta do servidor.
