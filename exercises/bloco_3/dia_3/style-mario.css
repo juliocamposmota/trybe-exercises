@@ -1,0 +1,48 @@
+img {
+  width: 150px;
+  display: block;
+}
+
+.left {
+  float: left;
+}
+
+.box {
+  width: 400px;
+  border-bottom: 15px solid black;
+  margin: 25px 60px;
+}
+
+.center {
+  position: relative;
+  margin: 0 auto;
+}
+
+#mario {
+  width: 115px;
+  top: 16px;
+  z-index: 2;
+}
+
+#gomba {
+  width: 95px;
+  z-index: 1;
+}
+
+#bowser {
+  width: 250px;
+  z-index: 4;
+}
+
+#baloon {
+  width: 180px;
+  top: 35px;
+  right: 110px;
+  z-index: 5;
+}
+
+.word {
+  top: 94px;
+  left: 8px;
+  z-index: 6;
+}
