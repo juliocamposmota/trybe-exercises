@@ -1,0 +1,17 @@
+h1, p {
+  text-align: center;
+}
+
+li:hover {
+  background-color: cornflowerblue;
+}
+
+li:active {
+  color: white;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+ul, ol {
+  list-style: none;
+}
