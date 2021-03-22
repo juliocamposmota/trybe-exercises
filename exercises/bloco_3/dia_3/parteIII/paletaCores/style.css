@@ -1,0 +1,45 @@
+div:hover {
+  border: 1px solid black;
+}
+
+div:nth-of-type(1) { background-color: #B8B42D; }
+div:nth-of-type(2) { background-color: #697A21; }
+
+div:nth-of-type(3) {
+  background-color: #FFFCE8;
+  height: 60px;
+}
+
+div:nth-of-type(3) h3:hover {
+  color: black;
+}
+
+div:nth-of-type(4) { background-color: #3E363F; }
+div:nth-of-type(5) { background-color: #DD403A; }
+
+div:nth-of-type(1) h3 { color: #DD403A; }
+
+div:nth-of-type(2) h3 { 
+  color: #3E363F;
+  margin-left: 120px;
+}
+
+div:nth-of-type(3) h3 { 
+  color: #FFFCE8;
+  text-align: center;
+}
+
+div:nth-of-type(4) h3 { 
+  color: #697A21; 
+  margin-left: 400px;
+}
+
+div:nth-of-type(5) h3 { 
+  color: #B8B42D; 
+  text-align: right;
+}
+
+div:nth-child(2n+1) h3 {
+  font-style: italic;
+  font-size: 20px;
+}
