@@ -1,0 +1,29 @@
+Algoritmo:
+
+1 - Escreva o array;
+2 - Escreva a estrutura for para iterar sobre os elementos do array;
+3 - Dentro da estrutura for, escreva a função console.log()
+4 - Declare o valor do index como parâmetro da função console.log()
+
+
+Perguntas:
+
+- Eu resolvi o problema?
+
+Sim
+
+- Havia outras maneiras de resolver o problema?
+
+Sim
+
+- A maneira que eu escolhi foi a mais eficiente possível?
+
+Sim
+
+- Seria possível inverter ou retirar algum passo?
+
+Não
+
+- Se eu fosse um computador, conseguiria entender todas as intruções?
+
+Sim

@@ -1,0 +1,29 @@
+Algoritmo:
+
+1 - Declare um array vazio;
+2 - Escreva uma estrutura for para percorrer de 1 a 25;
+3 - Dentro da estrutura for, com a função push coloque cada index no array declarado;
+4 - Imprima na tela o valor do array
+
+
+Perguntas:
+
+- Eu resolvi o problema?
+
+Sim
+
+- Havia outras maneiras de resolver o problema?
+
+Sim
+
+- A maneira que eu escolhi foi a mais eficiente possível?
+
+Talvez não
+
+- Seria possível inverter ou retirar algum passo?
+
+Sim
+
+- Se eu fosse um computador, conseguiria entender todas as intruções?
+
+Sim

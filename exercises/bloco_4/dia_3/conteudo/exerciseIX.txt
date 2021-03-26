@@ -1,0 +1,28 @@
+Algoritmo:
+
+1 - Escreva o array do exercício anterior;
+2 - Escreva uma estrutura for para percorrer todos os elementos do array;
+3 - Dentro da estrutura for, imprima cada index do array dividido por 2;
+
+
+Perguntas:
+
+- Eu resolvi o problema?
+
+Sim
+
+- Havia outras maneiras de resolver o problema?
+
+Sim
+
+- A maneira que eu escolhi foi a mais eficiente possível?
+
+Talvez não
+
+- Seria possível inverter ou retirar algum passo?
+
+Sim
+
+- Se eu fosse um computador, conseguiria entender todas as intruções?
+
+Sim
