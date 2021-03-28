@@ -1,0 +1,33 @@
+Algoritmo:
+
+1 - Escreva o array numbers;
+2 - Declare uma variável soma para guardar a soma acumulada de cada elemento do array;
+3 - Declare uma variável média aritmética para guardar o valor da média posteriormente;
+4 - Escreva uma estrutura for para percorrer cada elemento do array;
+5 - Dentro da estrutura for, some o valor atual da variável soma com o valor do elemento index;
+6 - Atribua a variável média aritmética a divisão da variável soma com o tamanho do array numbers;
+7 - Depois do for escreva a função console.log()
+8 - Coloque a variável soma como parâmetro da função console.log() para mostrar a média aritmética;
+
+
+Perguntas:
+
+- Eu resolvi o problema?
+
+Sim
+
+- Havia outras maneiras de resolver o problema?
+
+Sim
+
+- A maneira que eu escolhi foi a mais eficiente possível?
+
+Talvez não
+
+- Seria possível inverter ou retirar algum passo?
+
+Sim
+
+- Se eu fosse um computador, conseguiria entender todas as intruções?
+
+Sim

@@ -1,0 +1,31 @@
+Algoritmo:
+
+1 - Escreva o array numbers;
+2 - Declare uma variável menor valor para guardar o menor valor do array;
+3 - Escreva uma estrutura for para percorrer cada elemento do array;
+4 - Dentro da estrutura for, escreva uma estrutura if para validar se o valor do index é menor que a variável menor valor;
+5 - Se positivo atribua o valor do index à variável menor valor;
+6 - Imprima na tela o valor da variável menor valor
+
+
+Perguntas:
+
+- Eu resolvi o problema?
+
+Sim
+
+- Havia outras maneiras de resolver o problema?
+
+Sim
+
+- A maneira que eu escolhi foi a mais eficiente possível?
+
+Talvez não
+
+- Seria possível inverter ou retirar algum passo?
+
+Sim
+
+- Se eu fosse um computador, conseguiria entender todas as intruções?
+
+Sim

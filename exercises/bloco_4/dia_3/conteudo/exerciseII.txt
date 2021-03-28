@@ -1,0 +1,31 @@
+Algoritmo
+
+1 - Escreva o array numbers;
+2 - Declare uma variável soma para guardar a soma acumulada de cada elemento do array;
+3 - Escreva uma estrutura for para percorrer cada elemento do array;
+4 - Dentro da estrutura for, some o valor atual da variável soma com o valor do elemento index;
+5 - Depois do for escreva a função console.log()
+6 - Coloque a variável soma como parâmetro da função console.log() para mostrar a soma total;
+
+
+Perguntas:
+
+- Eu resolvi o problema?
+
+Sim
+
+- Havia outras maneiras de resolver o problema?
+
+Sim
+
+- A maneira que eu escolhi foi a mais eficiente possível?
+
+Sim
+
+- Seria possível inverter ou retirar algum passo?
+
+Não
+
+- Se eu fosse um computador, conseguiria entender todas as intruções?
+
+Sim
