@@ -12,11 +12,11 @@ let info2 = {
   recorrente: 'Sim',
 };
 
-for (let key = 0; key <= 3; key +=1) {
-  console.log(info1['key'] + ' e ' + info2['key']);
+let keys = [];
+for (let propertie in info1) {
+  keys.push(propertie);
 }
 
-console.log(info1.personagem + ' e ' + info2.personagem);
-console.log(info1.origem + ' e ' + info2.origem);
-console.log(info1.nota + ' e ' + info2.nota);
-console.log(info1.recorrente + ' e ' + info2.recorrente);
+for (let key = 0; key <= 3; key +=1) {
+  console.log(info1[keys[key]] + ' e ' + info2[keys[key]]);
+}
