@@ -20,6 +20,7 @@ function module(a, b) {
 
 console.log(sum(15,15));
 console.log(subtraction(60, 45));
+console.log(subtraction(45, 60));
 console.log(multiplication(3, 3));
 console.log(division(15, 5));
 console.log(module(4, 2));
