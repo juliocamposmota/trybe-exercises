@@ -1,6 +1,5 @@
 function countMostRepetedNumber(arrayNumbers) {
   let mostRepeted = 0;
-  let repetitions = 0;
   let count = 0;
   
   for (let number in arrayNumbers) {
