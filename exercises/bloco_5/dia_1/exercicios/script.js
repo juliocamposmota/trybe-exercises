@@ -31,9 +31,9 @@ function correctTitle(element, text) {
 }
 
 let titleText = 'Exercício 5.1 - JavaScripit'
-
 correctTitle(titleClass, titleText);
 
+// Req 5
 function toUpperCase(elements) {
   for (let element of elements) {
     let upperCaseElement = element.textContent.toUpperCase();
@@ -43,3 +43,12 @@ function toUpperCase(elements) {
 }
 
 toUpperCase(textTags);
+
+// Req 6
+function showOnConsole(elements) {
+  for (let element of elements) {
+    console.log(element.textContent);
+  }
+}
+
+showOnConsole(textTags);
