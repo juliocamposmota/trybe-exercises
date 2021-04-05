@@ -1,8 +1,10 @@
 let textTags = document.getElementsByTagName('p');
 let mainClasses = document.getElementsByClassName('main-content');
-let mainClass = mainClasses[0];
 let centerClasses = document.getElementsByClassName('center-content');
+let titleTags = document.getElementsByTagName('h1');
+let mainClass = mainClasses[0];
 let centerClass = centerClasses[0];
+let titleClass = titleTags[0];
 
 // Req. 1
 function showGoalText(text) {
@@ -14,7 +16,7 @@ showGoalText(goalText);
 
 // Req 2 e 3
 function changeBackgroundColor(element, color) {
-  element.style.backgroundColor = color;
+  return element.style.backgroundColor = color;
 }
 
 let mainBackgroundColor = 'rgb(76,164,109)';
@@ -24,3 +26,10 @@ changeBackgroundColor(mainClass, mainBackgroundColor);
 changeBackgroundColor(centerClass, centerBackgroundColor);
 
 // Req 4
+function correctTitle(element, text) {
+  return element.innerHTML = text;
+}
+
+let titleText = 'Exercício 5.1 - JavaScripit'
+
+correctTitle(titleClass, titleText);
