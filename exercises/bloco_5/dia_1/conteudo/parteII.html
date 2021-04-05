@@ -8,27 +8,32 @@
 </head>
 <body>
   <h2 id="page-title">Título</h2>
-  <p id="paragraph">Dê uma cor para este parágrafo!</p>
+  <p id="paragraph" class="paragraph">Dê uma cor para este parágrafo!</p>
   <h4 id="subtitle">Subtítulo</h4>
-  <p id="second-paragraph">Segundo parágrafo!</p>
+  <p id="second-paragraph" class="paragraph">Segundo parágrafo!</p>
 
   <script>
     let pageTitle = document.getElementById('page-title');
     let paragraph = document.getElementById("paragraph");
     let secondParagraph = document.getElementById('second-paragraph');
-    let subtitle = document.getElementById('subtitle');
+    let paragraphClass = document.getElementsByClassName('paragraph');
+    let subtitle = document.getElementsByTagName('h4');
 
     pageTitle.innerText = 'Os reis de Dogtown';
-    paragraph.style.color = "red";
-    secondParagraph.style.backgroundColor = 'black';
+    paragraph.style.color = "yellow";
+    paragraph.innerText = 'O legado do skate!';
     secondParagraph.style.color = 'red';
-    secondParagraph.style.fontWeight = 'bold';
-    secondParagraph.style.width = '300px';
-    secondParagraph.style.textAlign = 'center';
     secondParagraph.innerText = 'sk8 4lif3';
-    subtitle.innerText = 'Onde tudo começou...';
-    subtitle.style.letterSpacing = '10px';
-    subtitle.style.fontSize = '22px';
+    subtitle[0].innerText = 'Onde tudo começou...';
+    subtitle[0].style.letterSpacing = '10px';
+    subtitle[0].style.fontSize = '22px';
+
+    for (let i = 0; i < paragraphClass.length; i += 1) {
+      paragraphClass[i].style.backgroundColor = 'black';
+      paragraphClass[i].style.fontWeight = 'bold';
+      paragraphClass[i].style.width = '300px';
+      paragraphClass[i].style.textAlign = 'center';
+    }
   </script>
 </body>
 </html>
