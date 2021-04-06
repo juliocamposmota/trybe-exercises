@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conteúdo Parte II Aula 5.1</title>
+</head>
+<body>
+  <h2 id="page-title">Título</h2>
+  <p id="paragraph" class="paragraph">Dê uma cor para este parágrafo!</p>
+  <h4 id="subtitle">Subtítulo</h4>
+  <p id="second-paragraph" class="paragraph">Segundo parágrafo!</p>
+
+  <script>
+    let pageTitleId = document.querySelector('#page-title');
+    let paragraphId = document.querySelector("#paragraph");
+    let secondParagraphId = document.querySelector('#second-paragraph');
+    let paragraphClass = document.querySelectorAll('.paragraph');
+    let subtitleTags = document.querySelectorAll('h4');
+
+    pageTitleId.innerText = 'Os reis de Dogtown';
+
+    paragraphId.style.color = "yellow";
+    paragraphId.innerText = 'O legado do skate!';
+
+    secondParagraphId.style.color = 'red';
+    secondParagraphId.innerText = 'sk8 4lif3';
+    
+    subtitleTags[0].innerText = 'Onde tudo começou...';
+    subtitleTags[0].style.letterSpacing = '10px';
+    subtitleTags[0].style.fontSize = '22px';
+
+    for (let i = 0; i < paragraphClass.length; i += 1) {
+      paragraphClass[i].style.backgroundColor = 'black';
+      paragraphClass[i].style.fontWeight = 'bold';
+      paragraphClass[i].style.width = '300px';
+      paragraphClass[i].style.textAlign = 'center';
+    }
+  </script>
+</body>
+</html>
