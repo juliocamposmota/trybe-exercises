@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conteúdo 5.2 - Parte II</title>
+  <title>Conteúdo 5.2 - Parte I</title>
 </head>
 <body>
   <div id="paiDoPai">
@@ -16,7 +16,7 @@
       </div>
       Atenção!
       <div id="terceiroFilho"></div>
-      <div id="quartoFilho"></div>
+      <div id="quartoEUltimoFilho"></div>
     </div>
   </div>
 
@@ -28,25 +28,12 @@
     let primeiroFilhoDoFilho = ondeVoceEsta.firstElementChild;
     let atention = ondeVoceEsta.nextSibling;
     // let terceiroFilho = ondeVoceEsta.nextElementSibling;
-    // let terceiroFilho = pai.children[2];
-    let quartoFilho = pai.children[3];
+    let terceiroFilho = pai.children[2];
 
     pai.style.backgroundColor = 'yellow';
     primeiroFilho.innerText = 'Aqui um texto no primeiro elemento Filho.';
     primeiroFilhoDoFilho.innerText = 'Aqui um texto no primeiro elemento Filho do Filho.';
-    quartoFilho.innerText = 'Aqui um texto no quarto elemento Filho.'
-
-    let quintoEUltimoFilho = document.createElement('div');
-    pai.appendChild(quintoEUltimoFilho);
-
-    let primeiroFilhoDoFilhoDoFilho = document.createElement('div');
-    primeiroFilhoDoFilho.appendChild(primeiroFilhoDoFilhoDoFilho);
-    primeiroFilhoDoFilhoDoFilho.innerText = 'Primeiro Filho do Filho do Filho... votz';
-    primeiroFilhoDoFilhoDoFilho.style.backgroundColor = 'red';
-
-    let terceiroFilho = primeiroFilhoDoFilhoDoFilho.parentNode.parentNode.nextElementSibling;
     terceiroFilho.innerText = 'Aqui um texto no terceiro elemento Filho.';
-    terceiroFilho.style.backgroundColor = 'green';
   </script>
 </body>
 </html>
