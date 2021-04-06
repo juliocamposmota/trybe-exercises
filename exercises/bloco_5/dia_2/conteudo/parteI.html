@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conteúdo 5.2 - Parte II</title>
+</head>
+<body>
+  <div id="paiDoPai">
+    <div id="pai">
+      <div id="primeiroFilho"></div>
+      <div id="elementoOndeVoceEsta">
+        <div id="primeiroFilhoDoFilho"></div>
+        <div id="segundoEUltimoFilhoDoFilho"></div>
+      </div>
+      Atenção!
+      <div id="terceiroFilho"></div>
+      <div id="quartoFilho"></div>
+    </div>
+  </div>
+
+  <script>
+    let ondeVoceEsta = document.querySelector('#elementoOndeVoceEsta');
+    let pai = ondeVoceEsta.parentNode;
+    // let primeiroFilho = pai.firstElementChild;
+    let primeiroFilho = ondeVoceEsta.previousElementSibling;
+    let primeiroFilhoDoFilho = ondeVoceEsta.firstElementChild;
+    let atention = ondeVoceEsta.nextSibling;
+    // let terceiroFilho = ondeVoceEsta.nextElementSibling;
+    // let terceiroFilho = pai.children[2];
+    let quartoFilho = pai.children[3];
+
+    pai.style.backgroundColor = 'yellow';
+    primeiroFilho.innerText = 'Aqui um texto no primeiro elemento Filho.';
+    primeiroFilhoDoFilho.innerText = 'Aqui um texto no primeiro elemento Filho do Filho.';
+    quartoFilho.innerText = 'Aqui um texto no quarto elemento Filho.'
+
+    let quintoEUltimoFilho = document.createElement('div');
+    pai.appendChild(quintoEUltimoFilho);
+
+    let primeiroFilhoDoFilhoDoFilho = document.createElement('div');
+    primeiroFilhoDoFilho.appendChild(primeiroFilhoDoFilhoDoFilho);
+    primeiroFilhoDoFilhoDoFilho.innerText = 'Primeiro Filho do Filho do Filho... votz';
+    primeiroFilhoDoFilhoDoFilho.style.backgroundColor = 'red';
+
+    let terceiroFilho = primeiroFilhoDoFilhoDoFilho.parentNode.parentNode.nextElementSibling;
+    terceiroFilho.innerText = 'Aqui um texto no terceiro elemento Filho.';
+    terceiroFilho.style.backgroundColor = 'green';
+  </script>
+</body>
+</html>

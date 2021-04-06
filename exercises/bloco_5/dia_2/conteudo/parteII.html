@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conteúdo 5.2 - Parte I</title>
+</head>
+<body>
+  <div id="paiDoPai">
+    <div id="pai">
+      <div id="primeiroFilho"></div>
+      <div id="elementoOndeVoceEsta">
+        <div id="primeiroFilhoDoFilho"></div>
+        <div id="segundoEUltimoFilhoDoFilho"></div>
+      </div>
+      Atenção!
+      <div id="terceiroFilho"></div>
+      <div id="quartoEUltimoFilho"></div>
+    </div>
+  </div>
+
+  <script>
+    let ondeVoceEsta = document.querySelector('#elementoOndeVoceEsta');
+    let pai = ondeVoceEsta.parentNode;
+    // let primeiroFilho = pai.firstElementChild;
+    let primeiroFilho = ondeVoceEsta.previousElementSibling;
+    let primeiroFilhoDoFilho = ondeVoceEsta.firstElementChild;
+    let atention = ondeVoceEsta.nextSibling;
+    // let terceiroFilho = ondeVoceEsta.nextElementSibling;
+    let terceiroFilho = pai.children[2];
+
+    pai.style.backgroundColor = 'yellow';
+    primeiroFilho.innerText = 'Aqui um texto no primeiro elemento Filho.';
+    primeiroFilhoDoFilho.innerText = 'Aqui um texto no primeiro elemento Filho do Filho.';
+    terceiroFilho.innerText = 'Aqui um texto no terceiro elemento Filho.';
+  </script>
+</body>
+</html>

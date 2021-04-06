@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conteúdo 5.2 - Parte III</title>
+</head>
+<body>
+  <div id="paiDoPai">
+    <div id="pai">
+      <div id="primeiroFilho"></div>
+      <div id="elementoOndeVoceEsta">
+        <div id="primeiroFilhoDoFilho"></div>
+        <div id="segundoEUltimoFilhoDoFilho"></div>
+      </div>
+      Atenção!
+      <div id="terceiroFilho"></div>
+      <div id="quartoFilho"></div>
+    </div>
+  </div>
+
+  <script>
+    let ondeVoceEsta = document.querySelector('#elementoOndeVoceEsta');
+    let pai = ondeVoceEsta.parentNode;
+    let primeiroFilho = ondeVoceEsta.previousElementSibling;
+    let primeiroFilhoDoFilho = ondeVoceEsta.firstElementChild;
+    let segundoEUltimoFilhoDoFilho = ondeVoceEsta.lastElementChild;
+    let atention = ondeVoceEsta.nextSibling;
+    let terceiroFilho = pai.children[2];
+    let quartoEUltimoFilho = pai.lastElementChild;
+
+    pai.style.backgroundColor = 'yellow';
+    primeiroFilho.innerText = 'Aqui um texto no primeiro elemento Filho.';
+    primeiroFilhoDoFilho.innerText = 'Aqui um texto no primeiro elemento Filho do Filho.';
+    quartoFilho.innerText = 'Aqui um texto no quarto elemento Filho.'
+
+    let primeiroFilhoDoFilhoDoFilho = document.createElement('div');
+    primeiroFilhoDoFilho.appendChild(primeiroFilhoDoFilhoDoFilho);
+    primeiroFilhoDoFilhoDoFilho.innerText = 'Primeiro Filho do Filho do Filho... votz';
+    primeiroFilhoDoFilhoDoFilho.style.backgroundColor = 'red';
+
+    pai.removeChild(primeiroFilho);
+    pai.removeChild(terceiroFilho);
+    pai.removeChild(quartoEUltimoFilho);
+    pai.removeChild(atention);
+    ondeVoceEsta.removeChild(segundoEUltimoFilhoDoFilho);
+  </script>
+</body>
+</html>
