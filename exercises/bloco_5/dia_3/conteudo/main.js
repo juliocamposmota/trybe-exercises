@@ -3,35 +3,38 @@ const divDois = document.getElementById('divDois');
 const divTres = document.getElementById('divTres');
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('mySpotrybefy');
-const techsContainer = document.querySelector('.container').children;
+const container = document.querySelector('.container');
 
-function addTechClass(event) {
-  for (let element of techsContainer) {
+container.addEventListener('click', function (event) {
+  for (let element of container.children) {
     if (element.className === 'tech') {
       element.classList.remove('tech');
     }
   }
   
   event.target.className = 'tech';
-}
+});
 
-for (let element of techsContainer) {
-  element.addEventListener('click', addTechClass);
-}
+input.addEventListener('keyup', function (event) {
+  for (let element of container.children) {
+    if (element.className === 'tech') {
+      element.innerText = '';
+      element.innerText = input.value;
+    }
+  }
+});
 
-// function modifyText(event) {
-//   for (let element of techsContainer) {
-//     if (element.className === 'tech') {
-//       event.target.innerText = input.value;
-//     }
-//   }
-// }
+myWebpage.addEventListener('dblclick', function () {
+  window.location.href = 'https://juliocamposmota.github.io/portfolio-web-site/';
+});
 
-// input.addEventListener('keyup', modifyText);
+myWebpage.addEventListener('mouseover', function (event) {
+  event.target.style.backgroundColor = 'magenta';
+});
 
-// for (let container of techsContainer) {
-//   container.addEventListener('click', addTechClass(container));
-// }
+myWebpage.addEventListener('mouseleave', function () {
+  event.target.style.backgroundColor = '#333';
+});
 
 /*
  Copie esse arquivo e edite apenas ele;
