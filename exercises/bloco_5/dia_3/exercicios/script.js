@@ -139,3 +139,17 @@ includeTaskLabel('red');
 
 createTask('Fazer exercício da aula 5.3 da Trybe');
 includeTaskLabel('green');
+
+let tasks = document.querySelectorAll('div.task');
+
+for (let task of tasks) {
+  task.addEventListener('click', function() {
+    let actualClass = task.className.includes('selected');
+    
+    if(!actualClass) {
+      task.classList.add('selected');
+    } else {
+      task.className = 'task';
+    }
+  });  
+}
