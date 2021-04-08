@@ -95,7 +95,7 @@ for (let day of daysList.children) {
   day.addEventListener('mouseover', function() {
     day.style.fontSize = '40px';
     day.style.fontWeight = 'bold';
-    day.style.transition = '0.3s';
+    day.style.transition = '1s';
   });
 }
 
@@ -103,7 +103,7 @@ for (let day of daysList.children) {
   day.addEventListener('mouseout', function() {
     day.style.fontSize = '20px';
     day.style.fontWeight = 'normal';
-    day.style.transition = '0.3s';
+    day.style.transition = '1s';
   });
 }
 
@@ -119,3 +119,12 @@ for (let day of daysList.children) {
 //   event.target.style.transition = '0.3s';
 // });
 
+const myTasks = document.querySelector('div.my-tasks');
+
+function createTask(taskText) {
+  let task = document.createElement('span');
+  task.innerText = taskText;
+  myTasks.appendChild(task);
+}
+
+createTask('Lavar a louça');
