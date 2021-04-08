@@ -142,14 +142,19 @@ includeTaskLabel('green');
 
 let tasks = document.querySelectorAll('div.task');
 
-for (let task of tasks) {
-  task.addEventListener('click', function() {
-    let actualClass = task.className.includes('selected');
+myTasks.addEventListener('click', function(event) {
+  if (event.target.className.includes('task')) {
+    let actualClass = event.target.className.includes('selected');
     
-    if(!actualClass) {
-      task.classList.add('selected');
-    } else {
-      task.className = 'task';
+    for (let item of myTasks.children) {
+      item.classList.remove('selected');
     }
-  });  
-}
+  
+    if(actualClass) {
+      event.target.classList.remove('selected');
+    } else {
+      event.target.classList.add('selected');
+    }
+  }
+});
+
