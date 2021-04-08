@@ -127,4 +127,15 @@ function createTask(taskText) {
   myTasks.appendChild(task);
 }
 
+function includeTaskLabel(labelColor) {
+  let taskLabel = document.createElement('div');
+  taskLabel.className = 'task';
+  taskLabel.style.backgroundColor = labelColor;
+  myTasks.appendChild(taskLabel);
+}
+
 createTask('Lavar a louça');
+includeTaskLabel('red');
+
+createTask('Fazer exercício da aula 5.3 da Trybe');
+includeTaskLabel('green');
