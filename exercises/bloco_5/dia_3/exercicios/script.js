@@ -50,27 +50,43 @@ function createButton(buttonName, id) {
 }
 
 let holidayButton = createButton('Feriados', 'btn-holiday');
+let fridayButton = createButton('Sextou', 'btn-friday');
 buttonsContainer.appendChild(holidayButton);
-let buttonStatus = false;
+buttonsContainer.appendChild(fridayButton);
+let holidayButtonStatus = false;
+let fridayButtonStatus = false;
+
+function changeBackgroundColorByClassName(className, bgColor, fontColor) {
+  for (let day of daysList.children) {
+    if (day.className.includes(className) === true) {
+      day.style.backgroundColor = bgColor;
+      day.style.color = fontColor;
+    }
+  }
+}
 
 holidayButton.addEventListener('click', function() {
-  if (!buttonStatus) {
-    for (let day of daysList.children) {
-      if (day.className.includes('holiday') === true) {
-        day.style.backgroundColor = 'green';
-        day.style.color = 'white';
-      }
-    }
+  changeBackgroundColorByClassName('friday', 'rgb(238,238,238)', '#777');
+  fridayButtonStatus = false;
 
-    buttonStatus = true;
+  if (!holidayButtonStatus) {
+    changeBackgroundColorByClassName('holiday', 'green', 'white');
+    holidayButtonStatus = true;
   } else {
-    for (let day of daysList.children) {
-      if (day.className.includes('holiday') === true) {
-        day.style.backgroundColor = 'rgb(238,238,238)';
-        day.style.color = '#777';
-      }
-    }
+    changeBackgroundColorByClassName('holiday', 'rgb(238,238,238)', '#777');
+    holidayButtonStatus = false;
+  }
+});
 
-    buttonStatus = false;
+fridayButton.addEventListener('click', function() {
+  changeBackgroundColorByClassName('holiday', 'rgb(238,238,238)', '#777');
+  holidayButtonStatus = false;
+  
+  if (!fridayButtonStatus) {
+    changeBackgroundColorByClassName('friday', 'blue', 'white');
+    fridayButtonStatus = true;
+  } else {
+    changeBackgroundColorByClassName('friday', 'rgb(238,238,238)', '#777');
+    fridayButtonStatus = false;
   }
 });
