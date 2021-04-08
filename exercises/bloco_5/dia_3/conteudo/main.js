@@ -5,7 +5,7 @@ const input = document.getElementById('input');
 const myWebpage = document.getElementById('mySpotrybefy');
 const container = document.querySelector('.container');
 
-container.addEventListener('click', function (event) {
+container.addEventListener('click', function(event) {
   for (let element of container.children) {
     if (element.className === 'tech') {
       element.classList.remove('tech');
@@ -15,7 +15,7 @@ container.addEventListener('click', function (event) {
   event.target.className = 'tech';
 });
 
-input.addEventListener('keyup', function (event) {
+input.addEventListener('keyup', function(event) {
   for (let element of container.children) {
     if (element.className === 'tech') {
       element.innerText = '';
@@ -24,15 +24,15 @@ input.addEventListener('keyup', function (event) {
   }
 });
 
-myWebpage.addEventListener('dblclick', function () {
+myWebpage.addEventListener('dblclick', function() {
   window.location.href = 'https://juliocamposmota.github.io/portfolio-web-site/';
 });
 
-myWebpage.addEventListener('mouseover', function (event) {
+myWebpage.addEventListener('mouseover', function(event) {
   event.target.style.backgroundColor = 'magenta';
 });
 
-myWebpage.addEventListener('mouseleave', function () {
+myWebpage.addEventListener('mouseleave', function() {
   event.target.style.backgroundColor = '#333';
 });
 
