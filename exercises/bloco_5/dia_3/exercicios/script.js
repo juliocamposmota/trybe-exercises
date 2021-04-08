@@ -51,3 +51,26 @@ function createButton(buttonName, id) {
 
 let holidayButton = createButton('Feriados', 'btn-holiday');
 buttonsContainer.appendChild(holidayButton);
+let buttonStatus = false;
+
+holidayButton.addEventListener('click', function() {
+  if (!buttonStatus) {
+    for (let day of daysList.children) {
+      if (day.className.includes('holiday') === true) {
+        day.style.backgroundColor = 'green';
+        day.style.color = 'white';
+      }
+    }
+
+    buttonStatus = true;
+  } else {
+    for (let day of daysList.children) {
+      if (day.className.includes('holiday') === true) {
+        day.style.backgroundColor = 'rgb(238,238,238)';
+        day.style.color = '#777';
+      }
+    }
+
+    buttonStatus = false;
+  }
+});
