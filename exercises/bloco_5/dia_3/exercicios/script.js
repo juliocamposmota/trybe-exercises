@@ -107,18 +107,6 @@ for (let day of daysList.children) {
   });
 }
 
-// daysList.addEventListener('mouseover', function(event) {
-//   event.target.style.fontSize = '40px';
-//   event.target.style.fontWeight = 'bold';
-//   event.target.style.transition = '0.3s';
-// });
-
-// daysList.addEventListener('mouseout', function(event) {
-//   event.target.style.fontSize = '20px';
-//   event.target.style.fontWeight = 'normal';
-//   event.target.style.transition = '0.3s';
-// });
-
 const myTasks = document.querySelector('div.my-tasks');
 
 function createTask(taskText) {
@@ -158,3 +146,24 @@ myTasks.addEventListener('click', function(event) {
   }
 });
 
+let selectedClassStatus = false;
+
+daysList.addEventListener('click', function(event) {
+  if (event.target.className.includes('day')) {
+    let selectedClass = document.querySelector('.selected');
+    
+    if (selectedClass !== null) {
+      let selectedClassColor = selectedClass.style.backgroundColor;
+      
+      if (!selectedClassStatus) {
+        event.target.style.backgroundColor = selectedClassColor;
+        event.target.style.color = 'white';
+        selectedClassStatus = true;
+      } else {
+        event.target.style.backgroundColor = 'rgb(238,238,238)';
+        event.target.style.color = '#777';
+        selectedClassStatus = false;
+      }
+    }
+  }
+});
