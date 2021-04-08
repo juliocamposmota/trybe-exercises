@@ -81,7 +81,7 @@ holidayButton.addEventListener('click', function() {
 fridayButton.addEventListener('click', function() {
   changeBackgroundColorByClassName('holiday', 'rgb(238,238,238)', '#777');
   holidayButtonStatus = false;
-  
+
   if (!fridayButtonStatus) {
     changeBackgroundColorByClassName('friday', 'blue', 'white');
     fridayButtonStatus = true;
@@ -89,4 +89,16 @@ fridayButton.addEventListener('click', function() {
     changeBackgroundColorByClassName('friday', 'rgb(238,238,238)', '#777');
     fridayButtonStatus = false;
   }
+});
+
+daysList.addEventListener('mouseover', function(event) {
+  event.target.style.fontSize = '40px';
+  event.target.style.fontWeight = 'bold';
+  event.target.style.transition = '0.3s';
+});
+
+daysList.addEventListener('mouseout', function(event) {
+  event.target.style.fontSize = '20px';
+  event.target.style.fontWeight = 'normal';
+  event.target.style.transition = '0.3s';
 });
