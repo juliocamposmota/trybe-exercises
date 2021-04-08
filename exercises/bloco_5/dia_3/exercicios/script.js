@@ -91,14 +91,31 @@ fridayButton.addEventListener('click', function() {
   }
 });
 
-daysList.addEventListener('mouseover', function(event) {
-  event.target.style.fontSize = '40px';
-  event.target.style.fontWeight = 'bold';
-  event.target.style.transition = '0.3s';
-});
+for (let day of daysList.children) {
+  day.addEventListener('mouseover', function() {
+    day.style.fontSize = '40px';
+    day.style.fontWeight = 'bold';
+    day.style.transition = '0.3s';
+  });
+}
 
-daysList.addEventListener('mouseout', function(event) {
-  event.target.style.fontSize = '20px';
-  event.target.style.fontWeight = 'normal';
-  event.target.style.transition = '0.3s';
-});
+for (let day of daysList.children) {
+  day.addEventListener('mouseout', function() {
+    day.style.fontSize = '20px';
+    day.style.fontWeight = 'normal';
+    day.style.transition = '0.3s';
+  });
+}
+
+// daysList.addEventListener('mouseover', function(event) {
+//   event.target.style.fontSize = '40px';
+//   event.target.style.fontWeight = 'bold';
+//   event.target.style.transition = '0.3s';
+// });
+
+// daysList.addEventListener('mouseout', function(event) {
+//   event.target.style.fontSize = '20px';
+//   event.target.style.fontWeight = 'normal';
+//   event.target.style.transition = '0.3s';
+// });
+
