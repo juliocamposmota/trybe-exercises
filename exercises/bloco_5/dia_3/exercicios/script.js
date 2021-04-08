@@ -38,3 +38,16 @@ function includeDays() {
 }
 
 includeDays();
+
+let buttonsContainer = document.querySelector('.buttons-container');
+
+function createButton(buttonName, id) {
+  let button = document.createElement('button');
+  button.innerText = buttonName;
+  button.id = id;
+
+  return button;
+}
+
+let holidayButton = createButton('Feriados', 'btn-holiday');
+buttonsContainer.appendChild(holidayButton);
