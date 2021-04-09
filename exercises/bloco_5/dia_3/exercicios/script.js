@@ -167,3 +167,18 @@ daysList.addEventListener('click', function(event) {
     }
   }
 });
+
+let inputTaskContainer = document.querySelector('.input-container');
+let newTaskInput = document.querySelector('#task-input');
+let addTaskButton = document.querySelector('#btn-add');
+
+addTaskButton.addEventListener('click', function() {
+  if (newTaskInput.value !== '') {
+    let task = document.createElement('p');
+
+    task.innerHTML = newTaskInput.value;
+    inputTaskContainer.appendChild(task);
+  } else {
+    alert('Informe uma tarefa.');
+  }
+});
