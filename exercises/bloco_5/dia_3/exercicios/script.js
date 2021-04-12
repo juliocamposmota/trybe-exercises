@@ -182,3 +182,19 @@ addTaskButton.addEventListener('click', function() {
     alert('Informe uma tarefa.');
   }
 });
+
+newTaskInput.addEventListener('keypress', function(event) {
+  let keyCode = event.keyCode;
+
+  if (keyCode === 13) {
+    if (newTaskInput.value !== '') {
+      let task = document.createElement('p');
+  
+      task.innerHTML = newTaskInput.value;
+      inputTaskContainer.appendChild(task);
+      newTaskInput.value = '';
+    } else {
+      alert('Informe uma tarefa.');
+    }
+  }
+});
