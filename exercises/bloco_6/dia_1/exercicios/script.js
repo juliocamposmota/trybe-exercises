@@ -1,6 +1,8 @@
 const estados = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
 
 const estadoSelect = document.querySelector('#select-estados');
+const dataInicio = document.querySelector('#input-data-inicio');
+const botaoSalvar = document.querySelector('#button-salvar');
 
 function inserirEstados() {
   for (let index = 0; index < estados.length; index += 1) {
@@ -10,10 +12,6 @@ function inserirEstados() {
     estadoSelect.appendChild(estado);
   }
 }
-
-inserirEstados();
-
-const dataInicio = document.querySelector('#input-data-inicio');
 
 function dataMask() {
   let data = dataInicio.value;
@@ -39,4 +37,19 @@ function dataMask() {
   }
 }
 
+// function checkDate(data) {
+  
+// }
+
+function prevenirEnvio(event) {
+  event.preventDefault();
+  alert('teste ok');
+}
+
+inserirEstados();
 dataInicio.addEventListener('keyup', dataMask);
+botaoSalvar.addEventListener('click', prevenirEnvio);
+
+let data1 = '15/06/2021';
+
+console.log(data1.slice(0, 2));
