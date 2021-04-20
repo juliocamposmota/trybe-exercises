@@ -2,6 +2,7 @@ const estados = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT
 
 const estadoSelect = document.querySelector('#select-estados');
 const botaoSalvar = document.querySelector('#button-salvar');
+const botaoLimpar = document.querySelector('#button-reset');
 const personalContainer = document.querySelector('.personal-container');
 const nameInput = document.querySelector('#input-name');
 const nameLabel = document.querySelector('#name-label');
@@ -102,6 +103,15 @@ function prevenirEnvio(event) {
   createProfessionalResume();
 }
 
+function limparCurriculo() {
+  const respostas = document.querySelectorAll('#curriculo-container span');
+
+  for (let index = 0; index < respostas.length; index += 1) {
+    respostas[index].remove();
+  }
+}
+
 inserirEstados();
 dataInicioInput.addEventListener('keyup', dataMask);
 botaoSalvar.addEventListener('click', prevenirEnvio);
+botaoLimpar.addEventListener('click', limparCurriculo);
