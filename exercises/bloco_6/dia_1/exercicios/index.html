@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<htmuc lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloco 6.1 - Exercícios</title>
+</head>
+<body>
+  <form action="" method="GET">
+    <fieldset>
+      <label for="input-name">Nome
+        <input type="text" id="input-name" name="nome" maxlength="40" placeholder="Digite seu nome" required>
+      </label>
+      <br>
+      <label for="input-email">E-mail
+        <input type="text" id="input-email" name="email" maxlength="50" placeholder="Digite seu email" required>
+      </label>
+      <br>
+      <label for="input-cpf">CPF
+        <input type="text" id="input-cpf" name="cpf" maxlength="11" placeholder="Digite seu CPF" required>
+      </label>
+      <br>
+      <label for="input-endereco">Endereço
+        <input type="text" id="input-endereco" name="endereco" maxlength="200" placeholder="Digite seu endereço" required>
+      </label>
+      <br>
+      <label for="input-cidade">Cidade
+        <input type="text" id="input-cidade" name="cidade" maxlength="28" placeholder="Digite sua cidade de residência" required>
+      </label>
+      <br>
+      <label for="select-estados">Estado
+        <select id="select-estados" required>
+          <option value="">Selecione</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <label for="textarea-cv-resume">Resumo do currículo
+        <textarea id="textarea-cv-resume" maxlength="1000" placeholder="Escreva um breve resumo do seu currículo" required></textarea>
+      </label>
+      <br>
+      <label for="input-cargo">Cargo
+        <input type="text" id="input-cargo" name="cargo" maxlength="40" placeholder="Digite seu cargo" required>
+      </label>
+      <br>
+      <label for="input-descricao-cargo">Descrição
+        <input type="text" id="input-descricao-cargo" name="descricao-cargo" maxlength="500" placeholder="Descreva o cargo" required>
+      </label>
+      <br>
+      <label for="input-data-inicio">Data Início
+        <input type="text" id="input-data-inicio" name="data-inicio" maxlength="10" placeholder="dd/mm/aaa" required>
+      </label>
+    </fieldset>
+
+    <button type="submit" id="button-salvar">Salvar</button>
+    <button type="reset" id="button-reset">Limpar</button>
+  </form>
+
+  <div id="curriculo-container">
+    <section class="curriculo-single-container">
+      <label id="name-label">Nome:</label>
+      <br>
+      <label id="email-label">E-mail:</label>
+      <br>
+      <label id="cpf-label">CPF:</label>
+      <br>
+      <label id="address-label">Endereço:</label>
+      <br>
+      <label id="city-label">Cidade:</label>
+    </section>
+
+    <section class="curriculo-single-container">
+      <label id="resumo-label">Resumo do currículo:</label>
+      <br>
+      <label id="cargo-label">Cargo:</label>
+      <br>
+      <label id="descricao-label">Descrição:</label>
+      <br>
+      <label id="data-inicio-label">Data Início:</label>
+    </section>    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</htmuc de residência
