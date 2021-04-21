@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bloco 6.1 - Exercícios</title>
   <link rel="stylesheet" href="bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
   <script src="jquery-3.6.0.min.js"></script>
   <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
 </head>
@@ -13,23 +14,23 @@
   <form action="" method="GET">
     <fieldset>
       <div class="mb-3">
-        <label for="input-name" class="form-label">Nome</label>
+        <label for="input-name" class="form-label fw-bold">Nome</label>
         <input type="text" id="input-name" class="form-control" name="nome" maxlength="40" placeholder="Digite seu nome" required>
       </div>
       <div class="mb-3">
-        <label for="input-email" class="form-label">E-mail</label>
+        <label for="input-email" class="form-label fw-bold">E-mail</label>
         <input type="text" id="input-email" class="form-control" name="email" maxlength="50" placeholder="Digite seu email" required>
       </div>
       <div class="mb-3">
-        <label for="input-cpf" class="form-label">CPF</label>
+        <label for="input-cpf" class="form-label fw-bold">CPF</label>
         <input type="text" id="input-cpf" class="form-control" name="cpf" maxlength="11" placeholder="Digite seu CPF" required>
       </div>
       <div class="mb-3">
-        <label for="input-endereco" class="form-label">Endereço</label>
+        <label for="input-endereco" class="form-label fw-bold">Endereço</label>
         <input type="text" id="input-endereco" class="form-control" name="endereco" maxlength="200" placeholder="Digite seu endereço" required>
       </div>
       <div class="mb-3">
-        <label for="input-cidade" class="form-label">Cidade</label>
+        <label for="input-cidade" class="form-label fw-bold">Cidade</label>
         <input type="text" id="input-cidade" class="form-control" name="cidade" maxlength="28" placeholder="Digite sua cidade de residência" required>
       </div>
       <div class="mb-3">
@@ -41,19 +42,19 @@
 
     <fieldset>
       <div class="mb-3">
-        <label for="textarea-cv-resume" class="form-label">Resumo do currículo</label>
+        <label for="textarea-cv-resume" class="form-label fw-bold">Resumo do currículo</label>
         <textarea id="textarea-cv-resume" class="form-control" maxlength="1000" placeholder="Escreva um breve resumo do seu currículo" required></textarea>
       </div>
       <div class="mb-3">
-        <label for="input-cargo" class="form-label">Cargo</label>
+        <label for="input-cargo" class="form-label fw-bold">Cargo</label>
         <input type="text" id="input-cargo" class="form-control" name="cargo" maxlength="40" placeholder="Digite seu cargo" required>
       </div>
       <div class="mb-3">
-        <label for="input-descricao-cargo" class="form-label">Descrição</label>
+        <label for="input-descricao-cargo" class="form-label fw-bold">Descrição</label>
         <input type="text" id="input-descricao-cargo" class="form-control" name="descricao-cargo" maxlength="500" placeholder="Descreva o cargo" required>
       </div>
       <div class="mb-3">
-        <label for="input-data-inicio" class="form-label">Data Início</label>
+        <label for="input-data-inicio" class="form-label fw-bold">Data Início</label>
         <input type="text" id="input-data-inicio" class="form-control" name="data-inicio" maxlength="10" placeholder="dd/mm/aaa" required>
       </div>
     </fieldset>
@@ -63,7 +64,8 @@
   </form>
 
   <div id="curriculo" class="container">
-    <section class="curriculo-single-container">
+    <h2 class="text-center">Meu currículo profissional</h2>
+    <section class="curriculo-single container">
       <div class="mb-3">
         <label id="name-label" class="fs-4 fw-bold">Nome</label>
       </div>
@@ -84,18 +86,18 @@
       </div>
     </section>
 
-    <section class="curriculo-single-container">
+    <section class="curriculo-single container">
       <div class="mb-3">
-        <label id="resumo-label" class="fs-4 fw-bold">Resumo do currículo:</label>
+        <label id="resumo-label" class="fs-4 fw-bold">Pitch</label>
       </div>
       <div class="mb-3">
-        <label id="cargo-label" class="fs-4 fw-bold">Cargo:</label>
+        <label id="cargo-label" class="fs-4 fw-bold">Cargo</label>
       </div>
       <div class="mb-3">
-        <label id="descricao-label" class="fs-4 fw-bold">Descrição:</label>
+        <label id="descricao-label" class="fs-4 fw-bold">Descrição</label>
       </div>
       <div class="mb-3">
-        <label id="data-inicio-label" class="fs-4 fw-bold">Data Início:</label>
+        <label id="data-inicio-label" class="fs-4 fw-bold">Data Início</label>
       </div>
     </section>    
   </div>

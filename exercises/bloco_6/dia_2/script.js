@@ -23,6 +23,7 @@ const descricaoInput = document.querySelector('#input-descricao-cargo');
 const descricaoLabel = document.querySelector('#descricao-label');
 const dataInicioInput = document.querySelector('#input-data-inicio');
 const dataInicioLabel = document.querySelector('#data-inicio-label');
+const curriculo = document.querySelector('#curriculo');
 
 function inserirEstados() {
   for (let index = 0; index < estados.length; index += 1) {
@@ -96,10 +97,15 @@ function createProfessionalResume() {
   dataInicioLabel.insertAdjacentElement('afterend', dataInicioValue);
 }
 
+function changeCurriculoDisplay() {
+  curriculo.style.display = 'block';
+}
+
 function prevenirEnvio(event) {
   event.preventDefault();
   createPersonalResume();
   createProfessionalResume();
+  changeCurriculoDisplay();
 }
 
 function limparCurriculo() {
@@ -108,6 +114,8 @@ function limparCurriculo() {
   for (let index = 0; index < respostas.length; index += 1) {
     respostas[index].remove();
   }
+
+  curriculo.style.display = 'none';
 }
 
 inserirEstados();
