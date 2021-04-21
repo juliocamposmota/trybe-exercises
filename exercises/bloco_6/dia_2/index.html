@@ -9,10 +9,15 @@
   <link rel="stylesheet" href="style.css">
   <script src="jquery-3.6.0.min.js"></script>
   <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 </head>
 <body>
-  <form action="" method="GET">
-    <fieldset>
+  <form class="container" action="" method="GET">
+    <h1>Preencha os campos para gerar seu currículo</h1>
+
+    <fieldset class="single">
       <div class="mb-3">
         <label for="input-name" class="form-label fw-bold">Nome</label>
         <input type="text" id="input-name" class="form-control" name="nome" maxlength="40" placeholder="Digite seu nome" required>
@@ -40,7 +45,9 @@
       </div>
     </fieldset>
 
-    <fieldset>
+    <hr>
+
+    <fieldset class="single">
       <div class="mb-3">
         <label for="textarea-cv-resume" class="form-label fw-bold">Resumo do currículo</label>
         <textarea id="textarea-cv-resume" class="form-control" maxlength="1000" placeholder="Escreva um breve resumo do seu currículo" required></textarea>
@@ -55,7 +62,7 @@
       </div>
       <div class="mb-3">
         <label for="input-data-inicio" class="form-label fw-bold">Data Início</label>
-        <input type="text" id="input-data-inicio" class="form-control" name="data-inicio" maxlength="10" placeholder="dd/mm/aaa" required>
+        <input type="text" id="datepicker" class="form-control" name="data-inicio" autocomplete="off" placeholder="dd/mm/aaa" required>
       </div>
     </fieldset>
 
@@ -101,7 +108,7 @@
       </div>
     </section>    
   </div>
-
+  
   <script src="script.js"></script>
 </body>
 </html>

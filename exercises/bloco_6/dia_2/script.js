@@ -21,9 +21,11 @@ const cargoInput = document.querySelector('#input-cargo');
 const cargoLabel = document.querySelector('#cargo-label');
 const descricaoInput = document.querySelector('#input-descricao-cargo');
 const descricaoLabel = document.querySelector('#descricao-label');
-const dataInicioInput = document.querySelector('#input-data-inicio');
+const dataInicioInput = document.querySelector('#datepicker');
 const dataInicioLabel = document.querySelector('#data-inicio-label');
 const curriculo = document.querySelector('#curriculo');
+
+let picker = new Pikaday({ field: document.getElementById('datepicker') });
 
 function inserirEstados() {
   for (let index = 0; index < estados.length; index += 1) {
@@ -31,30 +33,6 @@ function inserirEstados() {
     estado.setAttribute('value', estados[index]);
     estado.innerText = estados[index];
     estadoSelect.appendChild(estado);
-  }
-}
-
-function dataMask() {
-  let data = dataInicioInput.value;
-
-  if (data.length === 2) {
-    if (data <= 0 || data > 31) {
-      alert('O dia deve estar entre 1 e 31.');
-      dataInicioInput.value = '';
-    } else {
-      data = data + '/';
-      dataInicioInput.value = data;
-    }
-  }
-
-  if (data.length === 5) {
-    if (data.slice(3) <= 0 || data.slice(3) > 12) {
-      alert('O mês deve estar entre 1 e 12.');
-      dataInicioInput.value = '';
-    } else {
-      data = data + '/';
-      dataInicioInput.value = data;
-    }
   }
 }
 
@@ -119,6 +97,5 @@ function limparCurriculo() {
 }
 
 inserirEstados();
-dataInicioInput.addEventListener('keyup', dataMask);
 botaoSalvar.addEventListener('click', prevenirEnvio);
 botaoLimpar.addEventListener('click', limparCurriculo);

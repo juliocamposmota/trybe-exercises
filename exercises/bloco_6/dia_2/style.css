@@ -2,3 +2,11 @@
   margin: 50px auto;
   display: none;
 }
+
+form {
+  margin: 25px auto;
+}
+
+.single {
+  margin: 15px auto;
+}
