@@ -14,6 +14,7 @@ const addressInput = document.querySelector('#input-endereco');
 const addressLabel = document.querySelector('#address-label');
 const cityInput = document.querySelector('#input-cidade');
 const cityLabel = document.querySelector('#city-label');
+const stateLabel = document.querySelector('#state-label');
 const resumoTextarea = document.querySelector('#textarea-cv-resume');
 const resumoLabel = document.querySelector('#resumo-label');
 const cargoInput = document.querySelector('#input-cargo');
@@ -57,15 +58,15 @@ function dataMask() {
 }
 
 function createPersonalResume() {
-  let nameValue = document.createElement('span');
-  let emailValue = document.createElement('span');
-  let cpfValue = document.createElement('span');
-  let addressValue = document.createElement('span');
-  let cityValue = document.createElement('span');
-  const cityStateSpace = document.createElement('span');
-  let stateValue = document.createElement('span');
+  let nameValue = document.createElement('p');
+  let emailValue = document.createElement('p');
+  let cpfValue = document.createElement('p');
+  let addressValue = document.createElement('p');
+  let cityValue = document.createElement('p');
+  let stateValue = document.createElement('p');
 
   nameValue.innerText = nameInput.value;
+  nameValue.classList.add('fs-6');
   nameLabel.insertAdjacentElement('afterend', nameValue);
   emailValue.innerText = emailInput.value;
   emailLabel.insertAdjacentElement('afterend', emailValue);
@@ -75,17 +76,15 @@ function createPersonalResume() {
   addressLabel.insertAdjacentElement('afterend', addressValue);
   cityValue.innerText = cityInput.value;
   cityLabel.insertAdjacentElement('afterend', cityValue);
-  cityStateSpace.innerText = ' - ';
-  cityValue.insertAdjacentElement('afterend', cityStateSpace);
   stateValue.innerText = estadoSelect.value;
-  cityStateSpace.insertAdjacentElement('afterend', stateValue);
+  stateLabel.insertAdjacentElement('afterend', stateValue);
 }
 
 function createProfessionalResume() {
-  let resumoValue = document.createElement('span');
-  let cargoValue = document.createElement('span');
-  let descricaoValue = document.createElement('span');
-  let dataInicioValue = document.createElement('span');
+  let resumoValue = document.createElement('p');
+  let cargoValue = document.createElement('p');
+  let descricaoValue = document.createElement('p');
+  let dataInicioValue = document.createElement('p');
 
   resumoValue.innerText = resumoTextarea.value;
   resumoLabel.insertAdjacentElement('afterend', resumoValue);
@@ -104,7 +103,7 @@ function prevenirEnvio(event) {
 }
 
 function limparCurriculo() {
-  const respostas = document.querySelectorAll('#curriculo-container span');
+  const respostas = document.querySelectorAll('#curriculo p');
 
   for (let index = 0; index < respostas.length; index += 1) {
     respostas[index].remove();
