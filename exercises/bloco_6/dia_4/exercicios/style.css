@@ -70,6 +70,7 @@ body {
   border: black solid 1px;
   display: flex;
   flex-basis: 16%;
+  flex-grow: 1;
   justify-content: center;
   height: 150px;
   margin: 10px;
