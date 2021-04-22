@@ -72,3 +72,17 @@ footer P {
     padding: 0 15px;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  header p {
+    font-size: 2rem;
+  }
+
+  header nav {
+    font-size: 1.2rem;
+  }
+
+  .main-content p {
+    font-size: 1.2rem;
+  }
+}
