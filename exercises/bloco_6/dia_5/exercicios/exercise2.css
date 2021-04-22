@@ -36,8 +36,39 @@ footer h3 {
 .main-content p,
 footer p {
   text-align: justify;
+  max-width: 680px;
 }
 
 footer P {
   font-size: 0.8rem;
+}
+
+@media screen and (min-width: 680px) {
+  header {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  
+  header nav {
+    display: block;
+  }
+
+  header nav ul {
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  header nav ul li {
+    padding: 0 12px;
+  }
+
+  .information-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .information-container aside {
+    padding: 0 15px;
+  }
 }
