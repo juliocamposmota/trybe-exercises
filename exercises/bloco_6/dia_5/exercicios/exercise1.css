@@ -1,13 +1,24 @@
 body {
-
+  padding: 5px 4%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 h1 {
-
+  font-size: x-large;
 }
 
 h2 {
+  font-size: large;
+}
 
+p, figcaption {
+  font-size: medium;
+}
+
+p {
+  text-align: justify;
 }
 
 img {
@@ -15,5 +26,5 @@ img {
 }
 
 figure {
-  margin: 0;
+  margin: 25px auto;
 }
