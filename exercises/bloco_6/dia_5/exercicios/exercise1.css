@@ -1,0 +1,86 @@
+body {
+  padding: 5px 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: x-large;
+}
+
+h2 {
+  font-size: large;
+}
+
+p, figcaption {
+  font-size: medium;
+}
+
+p {
+  max-width: 700px;
+  text-align: justify;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 25px auto;
+}
+
+@media screen and (min-width: 540px) {
+  h1 {
+    font-size: xx-large;
+  }
+  
+  h2 {
+    font-size: x-large;
+  }
+  
+  p, figcaption {
+    font-size: large;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  body {
+    padding: 5px 6%;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  figure {
+    flex-basis: calc(50% - 10px);
+    margin: 25px 5px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  body {
+    padding: 5px 10%;
+  }
+  
+  figure {
+    flex-basis: calc(33.33% - 10px);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  h1 {
+    font-size: 40px;
+  }
+  
+  h2 {
+    font-size: 32px;
+  }
+  
+  p, figcaption {
+    font-size: x-large;
+  }
+}
