@@ -34,3 +34,35 @@ const longestWord = sentence => {
 
 console.log(longestWord('Fazem muitos anos que não vejo por ai um paralelepipedo'));
 
+// Exercício 3
+const counter = document.querySelector('p');
+
+let clicks = 0;
+
+document.querySelector('button')
+.addEventListener('click', () => counter.innerHTML = clicks += 1 );
+
+// Exercício 4
+
+const hardSkills = ['JavaScript', 'HTML', 'CSS', 'React', 'Python'];
+
+function skillList(nameParameter) {
+  const replacer = name => (
+    `Tryber ${name} aqui!
+    
+    Tudo bem?`
+  )
+  
+  let result = `${replacer(nameParameter)}
+    Minhas cinco principais habilidades são:`
+
+  for (let index in hardSkills) {
+    result = `${result}
+    
+    - ${hardSkills[index]}`
+  }
+  
+  return result;
+}
+
+console.log(skillList('Júlio'));
