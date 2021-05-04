@@ -31,5 +31,6 @@ const convertToUpperCase = (name, index) => {
   names[index] = name.toUpperCase();
 };
 
+console.log(names);
 names.forEach(convertToUpperCase);
 console.log(names);
