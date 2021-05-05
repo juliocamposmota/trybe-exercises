@@ -36,3 +36,23 @@ console.log(verifyEven(14)); // True
 const isEven2 = numbers.find((number) => number % 2 === 0);
 
 console.log(isEven2); // 30
+
+
+// Exemplo de aula
+const users = [
+  { firstName: 'Homer', lastName: 'Simpson', isDriver: true },
+  { firstName: 'Marge', lastName: 'Simpson', isDriver: true },
+  { firstName: 'Bart', lastName: 'Simpson', isDriver: false },
+  { firstName: 'Lisa', lastName: 'Simpson', isDriver: false },
+  { firstName: 'Maggie', lastName: 'Simpson', isDriver: false },
+];
+
+// encontrar a primeira pessoa que não é motorista
+
+const firstDriver = users.find((value) => value.isDriver === false );
+console.log('O primeiro motorista é ', firstDriver);
+
+const Maggie = users.find((person) => {
+  person.firstName === 'Maggie'
+});
+console.log(Maggie);
