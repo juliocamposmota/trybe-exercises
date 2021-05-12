@@ -1,4 +1,7 @@
-const { default: fetch } = require("node-fetch");
+const appendJoke = joke => {
+  const jokeContainer = document.querySelector('#jokeContainer');
+  jokeContainer.innerHTML = joke;
+}
 
 const API_URL = 'https://icanhazdadjoke.com/';
 
@@ -8,7 +11,9 @@ const fetchJoke = () => {
     headers: { 'Accept': 'application/json'},
   }
 
-  fetch(API_URL, myObject);
+  fetch(API_URL, myObject)
+    .then((response) => response.json())
+    .then((data) => appendJoke(data.joke));
 };
 
 window.onload = () => fetchJoke();
