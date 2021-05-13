@@ -6,20 +6,13 @@ const names = [
   'Abeladerco', 'Adieidy', 'Alarucha',
 ];
 
-function containsA() {
-  
+const checkWord = word => {
+  return word.match(/a/gi).length;
 }
 
-const palavra = 'Aanemarie';
-const letra = 'a';
-let quantidade = 0
-
-for (let index = 0; index < palavra.length; index += 1) {
-  if (palavra[index] === letra || palavra[index] === letra.toUpperCase()) {
-    quantidade++
-  }
+function containsA(array) {
+  const numbers = array.map((element) => checkWord(element));
+  return numbers.reduce((acc, curr) => acc + curr);
 }
 
-console.log(quantidade);
-
-// assert.deepStrictEqual(containsA(), 20);
+assert.deepStrictEqual(containsA(names), 20);
