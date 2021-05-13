@@ -1,0 +1,1 @@
+.then((array) => array.reduce((acc, curr) => acc + curr))
