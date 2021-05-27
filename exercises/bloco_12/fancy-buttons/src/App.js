@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super()
+
+    this.fancyHandle = this.fancyHandle.bind(this);
+    this.regularHandle = this.regularHandle.bind(this);
+    this.crazyHandle = this.crazyHandle.bind(this);
+  }
+
+  fancyHandle = () => console.log('This is my fancy button');
+  regularHandle = () => console.log('This is my regular button');
+  crazyHandle = () => console.log('This is my crazy button');
+
+  render() {
+    
+    return (
+      <div>
+        <button onClick={this.fancyHandle}>My Fancy Button</button>
+        <button onClick={this.regularHandle}>My Regular Button</button>
+        <button onClick={this.crazyHandle}>My Crazy Button</button>
+      </div>
+    );
+  }
 }
 
 export default App;
