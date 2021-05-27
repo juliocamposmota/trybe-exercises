@@ -16,23 +16,46 @@ class App extends React.Component {
     this.crazyHandle = this.crazyHandle.bind(this);
   }
 
-  fancyHandle = () => {
+  fancyHandle = (event) => {
     this.setState((estadoAnterior, _props) => ({
       fancyCliks: estadoAnterior.fancyCliks + 1
     }))
+
+    if ((this.state.fancyCliks + 1) % 2 === 0) {
+      event.target.style.backgroundColor = 'green';
+    } else {
+      event.target.style.backgroundColor = 'red';
+    }
+
+    console.log(event.target.style.backgroundColor);
   };
 
-  regularHandle = () => {
+  regularHandle = (event) => {
     this.setState((estadoAnterior, _props) => ({
       regularCliks: estadoAnterior.regularCliks + 1
     }))
+
+    if ((this.state.regularCliks + 1) % 2 === 0) {
+      event.target.style.backgroundColor = 'green';
+    } else {
+      event.target.style.backgroundColor = 'red';
+    }
+
+    console.log(event.target.style.backgroundColor);
   };
 
-  crazyHandle = () => {
+  crazyHandle = (event) => {
     this.setState((estadoAnterior, _props) => ({
       crazyCLiks: estadoAnterior.crazyCLiks + 1
     }))
-    // console.log('teste')
+
+    if ((this.state.crazyCLiks + 1) % 2 === 0) {
+      event.target.style.backgroundColor = 'green';
+    } else {
+      event.target.style.backgroundColor = 'red';
+    }
+
+    console.log(event.target.style.backgroundColor);
   };
 
   render() {
