@@ -9,8 +9,8 @@ class App extends Component {
       characters: [],
     };
   }
-
-  fetchCharacters = () => {
+  
+  componentDidMount() {
     fetch('https://rickandmortyapi.com/api/character')
     .then(response => response.json())
     .then(data => {
@@ -19,10 +19,22 @@ class App extends Component {
   }
 
   render() {
+    const { characters } = this.state;
 
     return (
       <div className="App">
         <h1>Rick and Morty characters</h1>
+
+        <div className="body">
+          {characters.map(({ name, image }) => {
+            return (
+              <div className="container" key={name}>
+                <h3>{name}</h3>
+                <img src={image} alt={name} />
+              </div>
+            )
+          })}
+        </div>
       </div>
     );
   }
