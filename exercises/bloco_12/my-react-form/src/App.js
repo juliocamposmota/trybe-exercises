@@ -10,14 +10,26 @@ class App extends Component {
       nameState: '',
       ageState: 0,
       notifyState: false,
+      fileState: '',
     }
 
     this.changeHandle = this.changeHandle.bind(this);
+
+    this.fileInput = React.createRef();
   }
 
   changeHandle({ target }) {
     const { name } = target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    let value;
+    if (target.type === 'checkbox') {
+      value = target.checked;
+    } else if (target.type === 'file') {
+      value = this.fileInput;
+    } else {
+      value = target.value;
+    }
+
+    console.log(this.fileInput);
 
     this.setState({
       [name]: value,
@@ -41,21 +53,31 @@ class App extends Component {
             </select>
           </label>
 
-          <label>
-            Adventure name:
+          <fieldset>
+            <legend>Personal info</legend>
 
-            <input type="text" name="nameState" onChange={this.changeHandle} />
-          </label>
+            <label>
+              Adventure name:
 
-          <label>
-            Age:
-            <input type="number" name="ageState" onChange={this.changeHandle} />
-          </label>
+              <input type="text" name="nameState" onChange={this.changeHandle} />
+            </label>
+
+            <label>
+              Age:
+              <input type="number" name="ageState" onChange={this.changeHandle} />
+            </label>
+          </fieldset>
 
           <label>
             Get notified about products and promotions?
 
             <input type="checkbox" name="notifyState" onChange={this.changeHandle} />
+          </label>
+
+          <label>
+            Choose your better picture, adventure!
+
+            <input type="file" name="fileState" ref={this.fileInput} onChange={this.changeHandle} />
           </label>
         </form>
       </div>
