@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PokemonSelect from './PokemonSelect';
+import NotifyCheckbox from './NotifyCheckbox';
 import './App.css';
 
 class App extends Component {
@@ -6,15 +8,14 @@ class App extends Component {
     super(props);
 
     this.state = {
-      pokemonState: 'Charmander',
+      pokemonState: 'charmander',
       nameState: '',
       ageState: 0,
-      notifyState: false,
+      notifyState: undefined,
       fileState: '',
     }
 
     this.changeHandle = this.changeHandle.bind(this);
-
     this.fileInput = React.createRef();
   }
 
@@ -29,8 +30,6 @@ class App extends Component {
       value = target.value;
     }
 
-    console.log(this.fileInput);
-
     this.setState({
       [name]: value,
     })
@@ -43,41 +42,48 @@ class App extends Component {
         <h1>My React Form</h1>
 
         <form className="form">
-          <label>
-            Choose your first Pokemon: 
+          <PokemonSelect 
+            value={this.state.pokemonState} 
+            changeHandle={this.changeHandle} 
+          />
 
-            <select name="pokemonState" onChange={this.changeHandle}>
-              <option value="charmander">Charmander</option>
-              <option value="bulbassaur">Bulbassaur</option>
-              <option value="squirtle">Squirtle</option>
-            </select>
-          </label>
-
-          <fieldset>
-            <legend>Personal info</legend>
-
-            <label>
-              Adventure name:
-
-              <input type="text" name="nameState" onChange={this.changeHandle} />
-            </label>
-
-            <label>
-              Age:
-              <input type="number" name="ageState" onChange={this.changeHandle} />
-            </label>
-          </fieldset>
+        <fieldset className="character-info">
+          <legend>Character info</legend>
 
           <label>
-            Get notified about products and promotions?
+            Adventure name:
 
-            <input type="checkbox" name="notifyState" onChange={this.changeHandle} />
+            <input 
+              type="text" 
+              name="nameState" 
+              onChange={this.changeHandle} 
+            />
           </label>
+
+          <label>
+            Age:
+            <input 
+              type="number" 
+              name="ageState" 
+              onChange={this.changeHandle} 
+            />
+          </label>
+        </fieldset>
+
+          <NotifyCheckbox 
+            value={this.state.notifyState} 
+            changeHandle={this.changeHandle} 
+          />
 
           <label>
             Choose your better picture, adventure!
 
-            <input type="file" name="fileState" ref={this.fileInput} onChange={this.changeHandle} />
+            <input 
+              type="file" 
+              name="fileState" 
+              ref={this.fileInput} 
+              onChange={this.changeHandle} 
+            />
           </label>
         </form>
       </div>
