@@ -4,9 +4,6 @@ class NotifyCheckbox extends Component {
   render() {
     const { value, changeHandle } = this.props;
 
-    let error;
-    if (value === undefined) error = 'Notify checkbox must not be undefined';
-
     return (
       <label>
         Get notified about products and promotions?

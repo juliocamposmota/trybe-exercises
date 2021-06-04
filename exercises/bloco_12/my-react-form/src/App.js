@@ -11,12 +11,31 @@ class App extends Component {
       pokemonState: 'charmander',
       nameState: '',
       ageState: 0,
-      notifyState: undefined,
+      notifyState: false,
       fileState: '',
+      formError: false,
     }
 
     this.changeHandle = this.changeHandle.bind(this);
+    this.errorHandler = this.errorHandler.bind(this);
     this.fileInput = React.createRef();
+  }
+
+  updateErrorState = (bool) => { 
+    this.setState({
+      formError: bool,
+    });
+  }
+
+  errorHandler(name, value) {
+    const { updateErrorState } = this;
+
+    switch(name) {
+      case 'nameState':
+        const isNameInvalid = !(value.length >= 3);
+        updateErrorState(isNameInvalid);
+        break;
+    }
   }
 
   changeHandle({ target }) {
@@ -33,9 +52,12 @@ class App extends Component {
     this.setState({
       [name]: value,
     })
+
+    this.errorHandler(name, value);
   }
 
   render() {
+    const { formError } = this.state;
 
     return (
       <div className="App">
@@ -86,6 +108,7 @@ class App extends Component {
             />
           </label>
         </form>
+        { formError && 'Formulário inválido' }
       </div>
     );
   }
