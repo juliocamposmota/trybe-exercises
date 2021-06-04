@@ -9,6 +9,7 @@ class App extends Component {
       pokemonState: 'Charmander',
       nameState: '',
       ageState: 0,
+      notifyState: false,
     }
 
     this.changeHandle = this.changeHandle.bind(this);
@@ -49,6 +50,12 @@ class App extends Component {
           <label>
             Age:
             <input type="number" name="ageState" onChange={this.changeHandle} />
+          </label>
+
+          <label>
+            Get notified about products and promotions?
+
+            <input type="checkbox" name="notifyState" onChange={this.changeHandle} />
           </label>
         </form>
       </div>
