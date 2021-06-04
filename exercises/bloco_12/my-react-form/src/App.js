@@ -11,26 +11,15 @@ class App extends Component {
       ageState: 0,
     }
 
-    this.pokemonHandle = this.pokemonHandle.bind(this);
-    this.nameHandle = this.nameHandle.bind(this);
-    this.ageHandle = this.ageHandle.bind(this);
+    this.changeHandle = this.changeHandle.bind(this);
   }
 
-  pokemonHandle(event) {
-    this.setState({
-      pokemonState: event.target.value,
-    })
-  }
+  changeHandle({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
 
-  nameHandle(event) {
     this.setState({
-      nameState: event.target.value,
-    })
-  }
-
-  ageHandle(event) {
-    this.setState({
-      ageState: event.target.value,
+      [name]: value,
     })
   }
 
@@ -44,7 +33,7 @@ class App extends Component {
           <label>
             Choose your first Pokemon: 
 
-            <select onChange={this.pokemonHandle}>
+            <select name="pokemonState" onChange={this.changeHandle}>
               <option value="charmander">Charmander</option>
               <option value="bulbassaur">Bulbassaur</option>
               <option value="squirtle">Squirtle</option>
@@ -54,12 +43,12 @@ class App extends Component {
           <label>
             Adventure name:
 
-            <input type="text" name="nome" onChange={this.nameHandle} />
+            <input type="text" name="nameState" onChange={this.changeHandle} />
           </label>
 
           <label>
             Age:
-            <input type="number" name="idade" onChange={this.ageHandle} />
+            <input type="number" name="ageState" onChange={this.changeHandle} />
           </label>
         </form>
       </div>
