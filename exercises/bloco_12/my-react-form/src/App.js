@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PokemonSelect from './PokemonSelect';
+import NotifyCheckbox from './NotifyCheckbox';
 import './App.css';
 
 class App extends Component {
@@ -6,62 +8,107 @@ class App extends Component {
     super(props);
 
     this.state = {
-      pokemonState: 'Charmander',
+      pokemonState: 'charmander',
       nameState: '',
       ageState: 0,
+      notifyState: false,
+      fileState: '',
+      formError: false,
     }
 
-    this.pokemonHandle = this.pokemonHandle.bind(this);
-    this.nameHandle = this.nameHandle.bind(this);
-    this.ageHandle = this.ageHandle.bind(this);
+    this.changeHandle = this.changeHandle.bind(this);
+    this.errorHandler = this.errorHandler.bind(this);
+    this.fileInput = React.createRef();
   }
 
-  pokemonHandle(event) {
+  updateErrorState = (bool) => { 
     this.setState({
-      pokemonState: event.target.value,
-    })
+      formError: bool,
+    });
   }
 
-  nameHandle(event) {
-    this.setState({
-      nameState: event.target.value,
-    })
+  errorHandler(name, value) {
+    const { updateErrorState } = this;
+
+    switch(name) {
+      case 'nameState':
+        const isNameInvalid = !(value.length >= 3);
+        updateErrorState(isNameInvalid);
+        break;
+    }
   }
 
-  ageHandle(event) {
+  changeHandle({ target }) {
+    const { name } = target;
+    let value;
+    if (target.type === 'checkbox') {
+      value = target.checked;
+    } else if (target.type === 'file') {
+      value = this.fileInput;
+    } else {
+      value = target.value;
+    }
+
     this.setState({
-      ageState: event.target.value,
+      [name]: value,
     })
+
+    this.errorHandler(name, value);
   }
 
   render() {
+    const { formError } = this.state;
 
     return (
       <div className="App">
         <h1>My React Form</h1>
 
         <form className="form">
-          <label>
-            Choose your first Pokemon: 
+          <PokemonSelect 
+            value={this.state.pokemonState} 
+            changeHandle={this.changeHandle} 
+          />
 
-            <select onChange={this.pokemonHandle}>
-              <option value="charmander">Charmander</option>
-              <option value="bulbassaur">Bulbassaur</option>
-              <option value="squirtle">Squirtle</option>
-            </select>
-          </label>
+        <fieldset className="character-info">
+          <legend>Character info</legend>
 
           <label>
             Adventure name:
 
-            <input type="text" name="nome" onChange={this.nameHandle} />
+            <input 
+              type="text" 
+              name="nameState" 
+              onChange={this.changeHandle} 
+            />
           </label>
 
           <label>
             Age:
-            <input type="number" name="idade" onChange={this.ageHandle} />
+            <input 
+              type="number" 
+              name="ageState" 
+              onChange={this.changeHandle} 
+            />
+          </label>
+        </fieldset>
+
+          <NotifyCheckbox 
+            value={this.state.notifyState} 
+            changeHandle={this.changeHandle} 
+          />
+
+          <label>
+            Choose your better picture, adventure!
+
+            <input 
+              type="file" 
+              name="fileState" 
+              ref={this.fileInput} 
+              onChange={this.changeHandle} 
+            />
           </label>
         </form>
+        { formError && 'Formulário inválido' }
       </div>
     );
   }
