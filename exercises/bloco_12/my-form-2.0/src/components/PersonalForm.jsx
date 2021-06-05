@@ -10,7 +10,7 @@ class PersonalForm extends Component {
   }
 
   render() {
-    const { changeHandle } = this.props;
+    const { upperCaseHandle, specialCharHandle } = this.props;
 
     return (
       <fieldset>
@@ -25,7 +25,7 @@ class PersonalForm extends Component {
               name="name"
               maxLength="40"
               required
-              onChange={changeHandle}
+              onChange={upperCaseHandle}
             />
           </label>
 
@@ -61,6 +61,7 @@ class PersonalForm extends Component {
               name="adress"
               maxLength="200"
               required
+              onChange={specialCharHandle}
             />
           </label>
 
