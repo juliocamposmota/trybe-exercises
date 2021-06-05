@@ -10,6 +10,8 @@ class PersonalForm extends Component {
   }
 
   render() {
+    const { changeHandle } = this.props;
+
     return (
       <fieldset>
         <legend>Dados Pessoais</legend>
@@ -21,7 +23,9 @@ class PersonalForm extends Component {
             <input
               type="text"
               name="name"
+              maxLength="40"
               required
+              onChange={changeHandle}
             />
           </label>
 
@@ -31,6 +35,7 @@ class PersonalForm extends Component {
             <input
               type="text"
               name="email"
+              maxLength="50"
               required
             />
           </label>
@@ -41,6 +46,7 @@ class PersonalForm extends Component {
             <input
               type="text"
               name="cpf"
+              maxLength="11"
               required
             />
           </label>
@@ -53,6 +59,7 @@ class PersonalForm extends Component {
             <input 
               type="text"
               name="adress"
+              maxLength="200"
               required
             />
           </label>
@@ -62,7 +69,8 @@ class PersonalForm extends Component {
 
             <input 
               type="text" 
-              name="city" 
+              name="city"
+              maxLength="28"
               required 
             />
           </label>
@@ -84,6 +92,7 @@ class PersonalForm extends Component {
             type="radio"
             name="adressType"
             id="house"
+            value="house"
           />
           Casa
         </label>
@@ -92,6 +101,7 @@ class PersonalForm extends Component {
             type="radio"
             name="adressType"
             id="apartment"
+            value="apartment"
           />
           Apartamento
         </label>
