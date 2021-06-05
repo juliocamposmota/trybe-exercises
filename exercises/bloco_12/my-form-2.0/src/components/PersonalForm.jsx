@@ -10,7 +10,11 @@ class PersonalForm extends Component {
   }
 
   render() {
-    const { upperCaseHandle, specialCharHandle } = this.props;
+    const {
+      upperCaseHandle,
+      specialCharHandle,
+      checkNumbersHandle,
+    } = this.props;
 
     return (
       <fieldset>
@@ -72,7 +76,8 @@ class PersonalForm extends Component {
               type="text" 
               name="city"
               maxLength="28"
-              required 
+              required
+              onBlur={checkNumbersHandle}
             />
           </label>
 
@@ -94,6 +99,7 @@ class PersonalForm extends Component {
             name="adressType"
             id="house"
             value="house"
+            required
           />
           Casa
         </label>
@@ -103,6 +109,7 @@ class PersonalForm extends Component {
             name="adressType"
             id="apartment"
             value="apartment"
+            required
           />
           Apartamento
         </label>
