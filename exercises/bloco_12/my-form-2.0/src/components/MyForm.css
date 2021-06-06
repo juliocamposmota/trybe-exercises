@@ -1,0 +1,23 @@
+.my-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+  min-width: 400px;
+  margin: 18px;
+}
+
+.label {
+  text-align: left;
+  display: block;
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: row;
+}
