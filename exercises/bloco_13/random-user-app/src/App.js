@@ -31,6 +31,13 @@ class App extends Component {
     this.fetchUsers();
   }
 
+  shouldComponentUpdate(_nextProps, { users }) {
+    const maxAge = 50;
+    const condition = users[0].dob.age <= maxAge;
+
+    return condition;
+  }
+
   render() {
     const { loading, users } = this.state;
 
