@@ -44,12 +44,13 @@ test('if email button or field are working', () => {
 
   const textEmail = getByTestId('saved-email');
   expect(textEmail).toBeInTheDocument();
-  expect(textEmail).toHaveTextContent('Saved');
-
+  expect(textEmail).not.toHaveTextContent('Saved');
+  
   const buttonSend = getByTestId('send-button');
   const inputEmail = getByLabelText('Email');
   fireEvent.change(inputEmail, { target: { value: EMAIL_USER } });
   fireEvent.click(buttonSend);
+  expect(textEmail).toHaveTextContent('Saved');
   expect(inputEmail).toHaveValue('');
   expect(textEmail).toHaveTextContent(`Saved ${EMAIL_USER}`);
 });
