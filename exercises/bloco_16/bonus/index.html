@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 16.1 - Bônus - Redux sem React</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.0/redux.min.js"></script>
+</head>
+
+<body>
+
+  <h1>Counter</h1>
+
+  <h2 id="value">0</h2>
+
+  <button id="increment">+ 1 </button>
+  <button id="decrement">- 1</button>
+  
+  <script>
+    // reducer.js
+    const contadorReducer = (state = 0, action) => {
+      switch(action.type) {
+        case 'INCREMENT':
+          return state + action.value;
+          break;
+        case 'DECREMENT':
+          return state - action.value;
+          break;
+        default:
+          return state;
+          break;
+      };
+    };
+
+    // store.js
+    const store = Redux.createStore(contadorReducer);
+
+    // actions.js
+    const incrementButton = document.getElementById('increment');
+    const decrementButton = document.getElementById('decrement');
+    const value = document.getElementById('value');
+
+    const incrementAction = () => {
+      store.dispatch({
+        type: 'INCREMENT',
+        value: 1,
+      });
+    };
+
+    const decrementAction = () => {
+      store.dispatch({
+        type: 'DECREMENT',
+        value: 1,
+      });
+    };
+
+    incrementButton.addEventListener('click', incrementAction);
+    decrementButton.addEventListener('click', decrementAction);
+
+    // não existe no react :) #descubra
+    store.subscribe(() => value.innerHTML = store.getState());
+
+  </script>
+</body>
+</html>
