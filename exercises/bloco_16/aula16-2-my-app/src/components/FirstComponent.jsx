@@ -6,9 +6,7 @@ class FirstComponent extends Component {
     const { myFirstState } = this.props;
     return (
       <div>
-        {myFirstState.map((element, index) => (
-          <p key={ index }>{ element }</p>
-        ))}
+        <p>{ myFirstState }</p>
       </div>
     );
   }

@@ -1,11 +1,11 @@
 const INITIAL_STATE = {
-  state: ['teste 1', 'teste 2'],
+  state: '',
 };
 
 const myReducer = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case 'NEW_ACTION':
-      return { state: action.state };
+      return { state: action.state};
     default:
       return state;
   }
