@@ -22,7 +22,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.joke}
+        <div>
+          <p>Before you go, listen to this dad joke:</p>
+          <span>{this.state.joke}</span>
+        </div>
       </div>
     );
   }
