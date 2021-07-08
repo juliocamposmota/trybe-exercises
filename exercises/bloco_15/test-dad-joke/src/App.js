@@ -7,7 +7,17 @@ class App extends Component {
 
     this.state = {
       joke: '',
+      nome: '',
+      email: '',
     };
+  }
+
+  handleInput({ target }) {
+    const { name, value } = target;
+
+    this.setState({
+      [name]: value,
+    });
   }
 
   componentDidMount() {
@@ -22,6 +32,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div>
+          <h1>Teste de Inputs</h1>
+
+          <label>
+            Nome: 
+            <input
+              data-testid="input-nome"
+              onChange={ (e) => this.handleInput(e) }
+              name="nome"
+              value={ this.state.nome }
+            />
+          </label>
+
+          <label>
+            Email:
+            <input
+              data-testid="input-email"
+              onChange={ (e) => this.handleInput(e) }
+              name="email"
+              value={ this.state.email }
+            />
+          </label>
+        </div>
+
         <div>
           <p>Before you go, listen to this dad joke:</p>
           <span>{this.state.joke}</span>
