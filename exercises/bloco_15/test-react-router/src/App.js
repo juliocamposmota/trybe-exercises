@@ -10,7 +10,24 @@ class App extends Component {
   render() {
     return (
       <div>
-        App Component
+        <Link to="/">Home</Link>
+        <Link to="/about">Sobre</Link>
+
+        <Switch>
+          <Route
+            exact
+            path="/about"
+            component={ About }
+          />
+          <Route
+            exact
+            path="/"
+            component={ Home }
+          />
+          <Route
+            component={ NoMatch }
+          />
+        </Switch>
       </div>
     );
   }
