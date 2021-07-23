@@ -13,7 +13,25 @@
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
     </div>
-    
-    <script src="script.js"></script>
+
+    <script>
+      const ESTADO_INICIAL = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        switch(action.type) {
+          case "NEXT_COLOR":
+            return { index: state.index + 1};
+          case "PREVIOUS_COLOR":
+            return { index: state.index - 1};
+          default:
+            return state;
+        };
+      };
+
+      const store = Redux.createStore(reducer);
+    </script>
   </body>
 </html>
