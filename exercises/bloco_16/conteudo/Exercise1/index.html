@@ -15,6 +15,11 @@
     </div>
 
     <script>
+      // Actions
+      const actionNextColor = { type: 'NEXT_COLOR' };
+      const actionPrevColor = { type: 'PREVIOUS_COLOR' };
+
+      // Reducer
       const ESTADO_INICIAL = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
@@ -23,15 +28,43 @@
       const reducer = (state = ESTADO_INICIAL, action) => {
         switch(action.type) {
           case "NEXT_COLOR":
-            return { index: state.index + 1};
+            return {
+              ...state,
+              index: state.index === state.colors.length - 1 ? 0 : state.index + 1,
+            };
           case "PREVIOUS_COLOR":
-            return { index: state.index - 1};
+            return {
+              ...state,
+              index: state.index === 0 ? state.colors.length - 1 : state.index - 1,
+            };
           default:
             return state;
         };
       };
 
+      // Store
       const store = Redux.createStore(reducer);
+
+      const prevButton = document.querySelector('#previous');
+      const nextButton = document.querySelector('#next');
+
+      const handlePrev = () => {
+        store.dispatch(actionNextColor);
+      };
+
+      const handleNext = () => {
+        store.dispatch(actionPrevColor);
+      };
+
+      prevButton.addEventListener('click', handlePrev);
+      nextButton.addEventListener('click', handleNext);
+
+      store.subscribe(() => {
+        const { colors, index } = store.getState();
+
+        document.getElementById('value').innerHTML = colors[index];
+        document.getElementById('container').style.backgroundColor = colors[index];
+      });
     </script>
   </body>
 </html>
