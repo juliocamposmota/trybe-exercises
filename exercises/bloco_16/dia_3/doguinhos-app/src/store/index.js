@@ -5,12 +5,12 @@ const GET_IMAGE = 'GET_IMAGE';
 const REQUEST_IMAGE = 'REQUEST_IMAGE';
 const FAILED_REQUEST = 'FAILED_REQUEST';
 
-function getImage(json) {
-  return { type: GET_IMAGE, payload: json.message };
-}
-
 function requestDog() {
   return { type: REQUEST_IMAGE };
+}
+
+function getImage(json) {
+  return { type: GET_IMAGE, payload: json.message };
 }
 
 function failedRequest(error) {
