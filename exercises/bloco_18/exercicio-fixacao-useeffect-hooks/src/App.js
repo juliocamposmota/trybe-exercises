@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import TimerContext from "./context/TimerContext";
 
 function App() {
+  const { time } = useContext(TimerContext);
+
   return (
-    <div className="App">
-      App Component
+    <div>
+      <p>{ time }</p>
     </div>
   );
 }
