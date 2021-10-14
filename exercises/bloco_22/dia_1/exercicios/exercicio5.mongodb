@@ -1,0 +1,2 @@
+use('TrybeExercise');
+db.bios.find().limit(3);
