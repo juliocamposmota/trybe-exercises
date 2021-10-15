@@ -1,0 +1,6 @@
+db.restaurants.countDocuments({
+  $nor: [
+    { rating: 1 },
+    { cuisine: 'American'}
+  ]
+});
