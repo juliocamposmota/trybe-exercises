@@ -1,0 +1,1 @@
+db.restaurants.find({ ragin: { $nin: [5, 6, 7] } }).count();
