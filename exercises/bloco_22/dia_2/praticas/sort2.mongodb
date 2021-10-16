@@ -1,0 +1,1 @@
+db.restaurant.find().sort({ rating: -1 });

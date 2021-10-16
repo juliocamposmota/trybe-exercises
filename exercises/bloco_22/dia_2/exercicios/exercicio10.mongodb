@@ -1,0 +1,6 @@
+db.superheroes.find({
+  $or: [
+    { 'aspects.hairColor': 'black' },
+    { 'aspects.hairColor': 'No Hair' }
+  ]
+});
