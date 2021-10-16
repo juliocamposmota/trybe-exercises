@@ -1,0 +1,6 @@
+db.superheroes.find({
+  $nor: [
+    { 'aspects.hairColor': 'black' },
+    { 'aspects.hairColor': 'No Hair' }
+  ]
+});
