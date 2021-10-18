@@ -1,0 +1,35 @@
+db.minMax.insertMany([
+  { _id: 1, campo: 25 },
+  { _id: 2, campo: 50 },
+  { _id: 3, campo: 100 }
+]);
+
+db.minMax.updateMany(
+  {},
+  { $max: { campo: 75 } },
+);
+
+db.minMax.updateMany(
+  {},
+  { $min: { campo: 42 } },
+);
+
+// EXEMPLO 1 - SCORES
+db.scores.update(
+  { _id: 1 },
+  { $min: { lowScore: 150 } },
+);
+
+db.scores.update(
+  { _id: 1 },
+  { $max: { highScore: 950 } },
+);
+
+// EXEMPLO 2 - DATAS
+db.tags.update(
+  { _id: 1 },
+  {
+    $min: { dateEntered: new Date("2019-09-25") },
+    $max: { dateExpired: new Date("2019-10-02") },
+  },
+);
