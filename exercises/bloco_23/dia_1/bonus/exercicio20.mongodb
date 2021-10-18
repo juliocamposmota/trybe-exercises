@@ -1,0 +1,16 @@
+db.xmen.find(
+  {
+    occupation: "Junior Staff",
+    areas: { $exists: false }
+  }
+);
+
+db.xmen.updateMany(
+  {
+    occupation: "Junior Staff",
+    areas: { $exists: false }
+  },
+  {
+    $set: { areas: ["Outside"] }
+  }
+);

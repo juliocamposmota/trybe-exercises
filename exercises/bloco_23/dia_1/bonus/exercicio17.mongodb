@@ -1,0 +1,11 @@
+// db.xmen.find({ class: "gama", power: { $gte: 300 } });
+
+db.xmen.updateMany(
+  { class: "gama" },
+  {
+    $max: { power: 300 },
+    $currentDate: {
+      lastUpdate: { $type: "timestamp" },
+    },
+  },
+);
