@@ -1,0 +1,8 @@
+db.products.insertMany([
+  { _id: 4, tags: ["red", "green"] },
+  { _id: 5, tags: ["apple", "lime"] },
+  { _id: 6, tags: "fruit" },
+  { _id: 7, tags: ["orange", "lemon", "grapefruit"] }
+]);
+
+db.products.find({ tags: { $size: 2 } });
