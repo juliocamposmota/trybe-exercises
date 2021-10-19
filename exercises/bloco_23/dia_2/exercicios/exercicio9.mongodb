@@ -1,0 +1,5 @@
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $set: { "cast.$[castEl].character": "Marv" } },
+  { arrayFilters: [{ "castEl.actor": "Daniel Stern" }] }
+);

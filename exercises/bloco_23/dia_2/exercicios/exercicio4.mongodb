@@ -1,0 +1,6 @@
+db.movies.updateOne(
+  { title: "Batman" },
+  { $pull: { category: "adventure" } }
+);
+
+// esse deveria ta no 3 xD
