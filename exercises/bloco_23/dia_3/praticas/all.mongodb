@@ -1,0 +1,5 @@
+// Retorna apenas o documento que possui ambas as tags na exata ordem.
+db.inventory.find({ tags: ["red", "blank"] });
+
+// Retorna independente da ordem ou de possuir outras tags no mesmo array.
+db.inventory.find({ tags: { $all: ["red", "blank"] } });
