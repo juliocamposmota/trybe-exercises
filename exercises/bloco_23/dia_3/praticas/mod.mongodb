@@ -1,0 +1,11 @@
+// $mod -> Operação módulo
+// inventory
+db.inventory.insertMany([
+  { _id: 3, item: "abc123", qty: 0 },
+  { _id: 4, item: "xyz123", qty: 5 },
+  { _id: 5, item: "ijk123", qty: 12 }
+]);
+
+db.inventory.find({
+  qty: { $mod: [4, 0] }
+});
