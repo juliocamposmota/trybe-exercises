@@ -1,0 +1,73 @@
+// contando o numero de documentos
+db.sales.aggregate([
+  { $group: {
+    _id: null,
+    count: { $sum: 1 },
+  } },
+]);
+
+// retornando valroes distintos
+db.sales.aggregate([
+  { $group: {
+    _id: "$item",
+    count: { $sum: 1 },
+  } },
+]);
+
+// somando valores
+db.sales.aggregate([
+  { $group: {
+    _id: "$item",
+    totalSaleAmount: { $sum: { $multiply: ["$price", "$quantity"] } },
+  } },
+]);
+
+// "having" combinando estágios
+db.sales.aggregate([
+  { $group: {
+    _id: "$item",
+    totalSaleAmount: { $sum: { $multiply: ["$price", "$quantity"] } },
+  } },
+  { $match: { totalSaleAmount: { $gte: 100 } } },
+]);
+
+// agrupando por null
+db.sales.aggregate([
+  { $group: {
+    _id: null,
+    totalSaleAmount: { $sum: { $multiply: ["$price", "$quantity"] } },
+    averageQuantity: { $avg: "$quantity" },
+    count: { $sum: 1 },
+  } },
+]);
+
+// para fixar
+db.transactions.aggregate([
+  { $group: {
+    _id: "$bank",
+    bank: { $sum: 1 },
+  } },
+]);
+
+db.transactions.aggregate([
+  { $group: {
+    _id: "$bank",
+    total: { $sum: "$value" },
+    transacoes: { $sum: 1 },
+  } },
+]);
+
+db.transactions.aggregate([
+  { $group: {
+    _id: "$bank",
+    total: { $sum: "$value" },
+  } },
+]);
+
+db.transactions.aggregate([
+  { $group: {
+    _id: "$bank",
+    total: { $sum: "$value" },
+  } },
+  { $match: { total: { $gt: 1000 } } },
+]);
