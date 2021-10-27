@@ -1,0 +1,63 @@
+// subtrair numeros
+db.sales.aggregate([
+  {
+    $project: {
+      item: 1,
+      total: {
+        $subtract: [
+          { $add: ["$price", "$fee"] },
+          "$discount",
+        ],
+      },
+    },
+  },
+]);
+
+// subtrair datas
+db.sales.aggregate([
+  {
+    $project: {
+      item: true,
+      dateDifference: {
+        $subtract: ["$$NOW", "$date"],
+      },
+    },
+  },
+]);
+
+db.sales.aggregate([
+  {
+    $project: {
+      item: true,
+      dateDifference: {
+        $subtract: [new Date(), "$date"],
+      },
+    },
+  },
+]);
+
+db.sales.aggregate([
+  {
+    $project: {
+      item: true,
+      dateDifference: {
+        $subtract: ["$date", 5 * 60 * 1000],
+      },
+    },
+  },
+]);
+
+// para fixar
+db.products.aggregate([
+  {
+    $project: {
+      name: true,
+      proffit: {
+        $subtract: [
+          "$sale_price",
+          { $add: ["$purchase_price", "$taxes"] },
+        ],
+      },
+    },
+  },
+]);
