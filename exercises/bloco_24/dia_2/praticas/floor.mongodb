@@ -1,0 +1,10 @@
+db.samples.aggregate([
+  {
+    $project: {
+      value: true,
+      floorValue: {
+        $floor: "$value"
+      }
+    }
+  }
+]);
