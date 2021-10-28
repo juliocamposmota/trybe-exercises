@@ -1,0 +1,49 @@
+db.samples.aggregate([
+  {
+    $project: {
+      value: true,
+      roundedValue: {
+        $round: ["$value"]
+      }
+    }
+  }
+]);
+
+db.samples.aggregate([
+  {
+    $project: {
+      value: true,
+      roundedValue: {
+        $round: ["$value", 1]
+      }
+    }
+  }
+]);
+
+// para fixar
+db.products.aggregate([
+  {
+    $project: {
+      name: true,
+      floor_price: {
+        $floor: "$sale_price"
+      }
+    }
+  }
+]);
+
+db.products.aggregate([
+  {
+    $project: {
+      name: true,
+      ceiling_proffit: {
+        $ceil: {
+          $subtract: [
+            "$sale_price",
+            "$purchase_price"
+          ],
+        }
+      },
+    },
+  },
+]);

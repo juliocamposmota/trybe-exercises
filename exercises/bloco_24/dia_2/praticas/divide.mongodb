@@ -1,0 +1,22 @@
+db.planning.aggregate([
+  {
+    $project: {
+      name: true,
+      workdays: {
+        $divide: ["$hours", 8]
+      }
+    }
+  }
+]);
+
+// para fixar
+db.products.aggregate([
+  {
+    $project: {
+      name: true,
+      discount_price: {
+        $divide: ["$sale_price", 2]
+      }
+    }
+  }
+]);
