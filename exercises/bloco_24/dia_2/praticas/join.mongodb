@@ -1,0 +1,100 @@
+// Condicionante no Join LookUp
+db.orders.aggregate([
+  {
+    $lookup: {
+      from: "warehouses",
+      let: { order_item: "$item", order_qty: "$ordered" },
+      pipeline: [
+        {
+          $match: {
+            $expr: {
+              $and: [
+                { $eq: ["$stock_item", "$$order_item"] },
+                { $gte: ["$instock", "$$order_qty"] },
+              ],
+            },
+          },
+        },
+        {
+          $project: {
+            _id: false,
+            stock_item: false,
+          },
+        },
+      ],
+      as: "stock_docs",
+    },
+  },
+]);
+
+// para fixar
+// 1
+db.clients.aggregate([
+  {
+    $lookup: {
+      from: "transactions",
+      let: { client_name: "$name" },
+      pipeline: [
+        {
+          $match: {
+            $expr: {
+              $eq: ["$from", "$$client_name"],
+            },
+          },
+        },
+      ],
+      as: "transactions_docs",
+    },
+  },
+]);
+
+// 2
+db.clients.aggregate([
+  {
+    $lookup: {
+      from: "transactions",
+      let: {
+        client_name: "$name",
+      },
+      pipeline: [
+        {
+          $match: {
+            $expr: {
+              $eq: ["$to", "$$client_name"],
+            },
+          },
+        },
+      ],
+      as: "recived_transactions",
+    },
+  },
+  {
+    $sort: { State: 1 },
+  },
+  {
+    $limit: 4,
+  },
+]);
+
+// 3
+db.clients.aggregate([
+  {
+    $match: { State: "Florida"},
+  },
+  {
+    $lookup: {
+      from: "transactions",
+      let: { client_name: "$name" },
+      pipeline: [
+        {
+          $match: {
+            $expr: {
+              $eq: ["$to", "$$client_name"],
+            },
+          },
+        },
+      ],
+      as: "recived_transactions",
+    },
+  },
+]);

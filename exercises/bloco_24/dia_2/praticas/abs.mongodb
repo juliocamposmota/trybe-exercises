@@ -1,0 +1,28 @@
+db.ratings.aggregate([
+  {
+    $project: {
+      delta: {
+        $abs: {
+          $subtract: ["$start", "$end"]
+        }
+      }
+    }
+  }
+]);
+
+// para fixar
+db.products.aggregate([
+  {
+    $project: {
+      name: true,
+      proffit: {
+        $abs: {
+          $subtract: [
+            "$sale_price",
+            { $add: ["$purchase_price", "$taxes"] },
+          ],
+        }
+      },
+    },
+  },
+]);

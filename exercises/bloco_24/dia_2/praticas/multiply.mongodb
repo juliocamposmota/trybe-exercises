@@ -1,0 +1,44 @@
+db.sales.aggregate([
+  {
+    $project: {
+      date: true,
+      item: true,
+      total: {
+        $multiply: ["$price", "$quantity"]
+      }
+    }
+  }
+]);
+
+// para fixar
+db.products.aggregate([
+  {
+    $project: {
+      _id: false,
+      name: true,
+      valor_estoque: {
+        $multiply: ["$sale_price", "$quantity"]
+      }
+    }
+  }
+]);
+
+db.products.aggregate([
+  {
+    $project: {
+      _id: false,
+      name: true,
+      total_profit: {
+        $multiply: [
+          {
+            $subtract: [
+              "$sale_price",
+              { $add: ["$purchase_price", "$taxes"] },
+            ],
+          },
+          "$quantity"
+        ]
+      }
+    }
+  }
+]);

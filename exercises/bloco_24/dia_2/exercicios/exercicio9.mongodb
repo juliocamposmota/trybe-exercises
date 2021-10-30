@@ -1,0 +1,53 @@
+db.vendas.aggregate([
+  {
+    $match: {
+      "dataVenda": {
+        $gte: ISODate("2020-03-01"),
+        $lte: ISODate("2020-03-31"),
+      },
+      "status": "EM SEPARACAO",
+    },
+  },
+  {
+    $project: {
+      _id: false,
+      clienteId: true,
+      dataVenda: true,
+      status: true,
+    },
+  },
+  {
+    $addFields: {
+      dataEntregaPrevista: {
+        $add: ["$dataVenda", 3 * 24 * 60 * 60000],
+      },
+    },
+  },
+  {
+    $group: {
+      _id: null,
+      ultimaEntrega: { $max: "$dataEntregaPrevista" },
+      primeiraEntrega: { $min: "$dataEntregaPrevista" },
+    },
+  },
+  {
+    $project: {
+      _id: false,
+      delta: {
+        $ceil: {
+          $abs: {
+            $divide: [
+              {
+                $subtract: [
+                  "$ultimaEntrega",
+                  "$primeiraEntrega"
+                ],
+              },
+              86400000,
+            ],
+          },
+        },
+      },
+    },
+  },
+]);

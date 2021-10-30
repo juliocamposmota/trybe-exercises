@@ -1,0 +1,16 @@
+db.vendas.aggregate([
+  {
+    $group: {
+      _id: "$clienteId",
+      frequencia: { $sum: 1 },
+    },
+  },
+  {
+    $match: {
+      frequencia: { $gte: 5 },
+    },
+  },
+  {
+    $count: "clientes",
+  },
+]);

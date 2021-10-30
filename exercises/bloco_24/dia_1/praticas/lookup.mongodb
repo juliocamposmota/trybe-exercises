@@ -1,0 +1,38 @@
+db.orders.aggregate([
+  { $lookup: {
+    from: "inventory",
+    localField: "item",
+    foreignField: "sku",
+    as: "inventory_docs",
+  } },
+]);
+
+// para fixar
+db.clients.aggregate([
+  { $lookup: {
+    from: "transactions",
+    localField: "name",
+    foreignField: "from",
+    as: "transactions_docs",
+  } },
+]);
+
+db.clients.aggregate([
+  { $lookup: {
+    from: "transactions",
+    localField: "name",
+    foreignField: "to",
+    as: "transactions_docs",
+  } },
+  { $limit: 4 },
+]);
+
+db.clients.aggregate([
+  { $match: { State: "Florida" } },
+  { $lookup: {
+    from: "transactions",
+    localField: "name",
+    foreignField: "to",
+    as: "transactions_docs",
+  } },
+]);

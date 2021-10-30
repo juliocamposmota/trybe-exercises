@@ -1,0 +1,30 @@
+db.scores.aggregate([
+  {
+    $addFields: {
+      totalHomework: { $sum: "$homework" },
+      totalQuiz: { $sum: "$quiz" },
+    }
+  },
+  {
+    $addFields: {
+      totalScore: {
+        $add: [
+          "$totalHomework",
+          "$totalQuiz",
+          "$extraCredit"
+        ]
+      }
+    }
+  }
+]);
+
+// para fixar
+db.products.aggregate([
+  {
+    $addFields: {
+      valor_estoque: {
+        $multiply: ["$sale_price", "$quantity"]
+      }
+    }
+  }
+]);
