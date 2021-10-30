@@ -4,6 +4,7 @@
   "description": "Scripts referentes aos exercicios da aula 25.1",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "imc": "node imc.js",
     "velocidade": "node velocidade.js",
