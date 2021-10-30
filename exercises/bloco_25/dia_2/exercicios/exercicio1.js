@@ -1,4 +1,4 @@
-const multiplicador = (a, b, c) => {
+const multiplier = (a, b, c) => {
   return new Promise((resolve, reject) => {
     if (typeof a !== 'number' || typeof b !== 'number' || typeof c !== 'number')
     return reject('Informe apenas números');
@@ -11,14 +11,16 @@ const multiplicador = (a, b, c) => {
   });
 };
 
-multiplicador('1', 2, 3)
-  .then((resolve) => console.log(resolve))
-  .catch((error) => console.log(error));
+// multiplier('1', 2, 3)
+//   .then((resolve) => console.log(resolve))
+//   .catch((error) => console.log(error));
 
-multiplicador(1, 2, 3)
-  .then((resolve) => console.log(resolve))
-  .catch((error) => console.log(error));
+// multiplier(1, 2, 3)
+//   .then((resolve) => console.log(resolve))
+//   .catch((error) => console.log(error));
 
-multiplicador(11, 22, 33)
-  .then((resolve) => console.log(resolve))
-  .catch((error) => console.log(error));
+// multiplier(11, 22, 33)
+//   .then((resolve) => console.log(resolve))
+//   .catch((error) => console.log(error));
+
+module.exports = multiplier;
