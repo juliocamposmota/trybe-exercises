@@ -1,0 +1,12 @@
+{
+  "name": "io-local",
+  "version": "1.0.0",
+  "description": "Exercício do course - aula 25.2 - Lendo arquivos com métodos síncronos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Júlio Mota",
+  "license": "ISC"
+}
