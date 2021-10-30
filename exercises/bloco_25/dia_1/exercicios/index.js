@@ -5,6 +5,7 @@ const scripts = [
   { name: 'Calcular velocidade média', script: './velocidade.js' },
   { name: 'Jogo de Adivinhação', script: './sorteio.js' },
   { name: 'Calculando Fatorial', script: './fatorial.js' },
+  { name: 'Mostrando Fibonacci', script: './fibonacci.js' },
 ];
 
 let message = scripts.map((script, i) => {
