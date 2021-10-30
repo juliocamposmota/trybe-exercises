@@ -1,6 +1,7 @@
 const multiplicador = (a, b, c) => {
   return new Promise((resolve, reject) => {
-    if (isNaN(a) || isNaN(b) || isNaN(c)) return reject('Informe apenas números');
+    if (typeof a !== 'number' || typeof b !== 'number' || typeof c !== 'number')
+    return reject('Informe apenas números');
 
     const result = (a + b) * c;
 
@@ -10,4 +11,14 @@ const multiplicador = (a, b, c) => {
   });
 };
 
-multiplicador('1', 2, 3);
+multiplicador('1', 2, 3)
+  .then((resolve) => console.log(resolve))
+  .catch((error) => console.log(error));
+
+multiplicador(1, 2, 3)
+  .then((resolve) => console.log(resolve))
+  .catch((error) => console.log(error));
+
+multiplicador(11, 22, 33)
+  .then((resolve) => console.log(resolve))
+  .catch((error) => console.log(error));
