@@ -1,7 +1,14 @@
 const fs = require('fs').promises;
 
 async function createFilesByArray() {
-  const strings = ['Finalmente', 'estou', 'usando', 'Promise.all', '!!!'];
+  const strings = [
+    'Finalmente',
+    'estou',
+    'usando',
+    'Promise.all',
+    '!!!'
+  ];
+
   const writePromises = strings.map((string, i) => {
     fs.writeFile(`file${i + 1}.txt`, string);
   });
