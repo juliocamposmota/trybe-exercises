@@ -1,0 +1,21 @@
+{
+  "name": "praticas",
+  "version": "1.0.0",
+  "description": "Aula 25.3 - Práticas do conteúdo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha ./tests"
+  },
+  "keywords": [],
+  "author": "Júlio Mota",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "sinon": "^12.0.1"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
