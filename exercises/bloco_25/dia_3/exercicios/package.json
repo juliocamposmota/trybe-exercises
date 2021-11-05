@@ -4,8 +4,8 @@
   "description": "Aula 25.3 - Práticas do conteúdo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha ./tests"
   },
   "keywords": [],
   "author": "Júlio Mota",
