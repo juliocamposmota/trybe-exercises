@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const rankNumbers = require('../functions/exercicio1');
+const rankNumbers = require('../functions/rankNumber');
 
 describe('testa um numero retornando se ele é positivo, negativo ou neutro:', () => {
   describe('testa o tipo do retorno', () => {
@@ -27,6 +27,20 @@ describe('testa um numero retornando se ele é positivo, negativo ou neutro:', (
     it('o retorno deve ser "neutro"', () => {
       const rank = rankNumbers(0);
       expect(rank).to.be.equals('neutro');
+    });
+  });
+
+  describe('quando o tipo da entrada é diferente de "number"', () => {
+    it('retorna "o valor deve ser um número"', () => {
+      const rankWithString = rankNumbers('string');
+      const rankWithNull = rankNumbers(null);
+      const rankWithArray = rankNumbers([]);
+      const rankWithObject = rankNumbers({});
+
+      expect(rankWithString).to.be.equals('o valor deve ser um número');
+      expect(rankWithNull).to.be.equals('o valor deve ser um número');
+      expect(rankWithArray).to.be.equals('o valor deve ser um número');
+      expect(rankWithObject).to.be.equals('o valor deve ser um número');
     });
   });
 });
