@@ -1,7 +1,9 @@
 const express = require('express');
+const bodyparser = require('body-parser');
 const sortByName = require('./functions/sortByName');
 
 const app = express();
+app.use(bodyparser.json());
 const PORT = 3001;
 
 const recipes = [
@@ -44,6 +46,12 @@ app.get('/recipes/:id', function (req, res) {
   res.status(200).json(recipe);
 });
 
+app.post('/recipes', function (req, res) {
+  const { id, name, price, waitTime } = req.body;
+  recipes.push({ id, name, price, waitTime });
+  res.status(201).json({ message: 'Recipe created successfully!' });
+});
+
 app.get('/drinks', function (req, res) {
   const sortedDrinks = sortByName(drinks);
   res.json(sortedDrinks);
@@ -67,6 +75,12 @@ app.get('/drinks/:id', function (req, res) {
   if (!drink) return res.status(404).json({ message: 'Drink not found' });
 
   res.status(200).json(drink);
+});
+
+app.post('/drinks', function (req, res) {
+  const { id, name, price } = req.body;
+  drinks.push({ id, name, price });
+  res.status(201).json({ message: 'Drink created successfully!' });
 });
 
 app.listen(PORT, () => {
