@@ -9,5 +9,5 @@ app.get('/hello', handleRequest);
 app.listen(PORT, () => console.log(`Listening to port ${PORT}`));
 
 function handleRequest(req, res) {
-  res.statusa(200).send('Hello World');
+  res.status(200).send('Hello World');
 }
