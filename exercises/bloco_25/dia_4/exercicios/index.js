@@ -1,5 +1,6 @@
-const express = require('express');
+const authMiddleware = require('./authMiddleware');
 const bodyparser = require('body-parser');
+const express = require('express');
 const fs = require('fs');
 
 const PORT = 3001;
@@ -7,6 +8,7 @@ const DATABASE = 'simpsons.json';
 
 const app = express();
 app.use(bodyparser.json());
+app.use(authMiddleware);
 
 app.get('/ping', (_req, res) => {
   return res.json({ message: 'pong' });
@@ -44,7 +46,7 @@ app.get('/simpsons/:id', (req, res) => {
 
   const data = fs.readFileSync(DATABASE);
   const characters = JSON.parse(data);
-  
+
   const character = characters.find((c) => c.id === id);
 
   if(!data) return res.status(404).json({
