@@ -15,6 +15,12 @@ app.post('/hello', (req, res) => {
   return res.json({ message: `Hello, ${name}` });
 });
 
+app.post('/greetings', (req, res) => {
+  const { name, age } = req.body;
+  if (age > 17) return res.json({ message: `Hello, ${name}` });
+  return res.status(401).json({ message: 'Unauthorized' });
+});
+
 app.listen(PORT, () => {
   console.log('We are ON!');
 });
