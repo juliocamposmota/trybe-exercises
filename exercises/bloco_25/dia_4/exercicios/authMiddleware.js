@@ -1,5 +1,3 @@
-const randomToken = require('random-token');
-
 const authMiddleware = (req, res, next) => {
   const { authorization } = req.headers;
 

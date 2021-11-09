@@ -1,4 +1,5 @@
 const authMiddleware = require('./authMiddleware');
+const randomToken = require('random-token');
 const bodyparser = require('body-parser');
 const express = require('express');
 const fs = require('fs');
@@ -71,6 +72,16 @@ app.post('/simpsons', (req, res) => {
   characters.push(newCharacter);
   fs.writeFileSync(DATABASE, JSON.stringify(characters));
   res.status(204).end();
+});
+
+app.post('/signup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+
+  if (!email || !password || !firstName || !phone) return res.status(401).json({
+    message: 'missing fields'
+  });
+
+  return res.status(200).json({ token: randomToken(16) });
 });
 
 app.listen(PORT, () => {
