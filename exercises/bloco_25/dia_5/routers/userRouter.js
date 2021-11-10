@@ -13,7 +13,9 @@ router.post(
   checkName,
   checkEmail,
   checkPassword,
-  (_req, res) => res.status(201).json({ message: 'user created' }),
+  (_req, res) => {
+    res.status(201).json({ message: 'user created' })
+  },
 );
 
 router.post(
@@ -23,7 +25,7 @@ router.post(
   (_req, res) => {
     const token = randomToken(12);
     res.status(200).json({ token });
-  }
+  },
 );
 
 module.exports = router;
