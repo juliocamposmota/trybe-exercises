@@ -12,7 +12,8 @@
   "author": "Júlio Mota Campos",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "random-token": "0.0.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

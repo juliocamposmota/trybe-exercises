@@ -1,8 +1,29 @@
 const express = require('express');
-const router = express.Router();
+const randomToken = require('random-token');
 
-router.post('/register', (_req, res) => {
-  res.status(201).json({ message: 'user created' });
-});
+const router = express.Router();
+const {
+  checkName,
+  checkEmail,
+  checkPassword,
+} = require('../middlewares');
+
+router.post(
+  '/register',
+  checkName,
+  checkEmail,
+  checkPassword,
+  (_req, res) => res.status(201).json({ message: 'user created' }),
+);
+
+router.post(
+  '/login',
+  checkEmail,
+  checkPassword,
+  (_req, res) => {
+    const token = randomToken(12);
+    res.status(200).json({ token });
+  }
+);
 
 module.exports = router;
