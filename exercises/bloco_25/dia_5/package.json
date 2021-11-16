@@ -1,0 +1,22 @@
+{
+  "name": "dia_5",
+  "version": "1.0.0",
+  "description": "Aula 25.5 - Exercícios",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Júlio Mota Campos",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.1",
+    "random-token": "0.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
