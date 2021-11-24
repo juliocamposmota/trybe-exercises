@@ -42,7 +42,11 @@ app.get(
   middlewares.auth,
   middlewares.admin,
   controllers.topSecret,
-)
+);
+
+app.post(
+  '/signup'
+);
 
 app.use(middlewares.error);
 
