@@ -28,7 +28,9 @@ app.use(express.static(path.resolve(__dirname, '/envios')));
 
 const storage = multer.diskStorage({
   destination: (_req, _file, callback) => callback(null, 'uploads'),
-  filename: (_req, file, callback) => callback(null, file.originalname),
+  filename: (_req, file, callback) => {
+    callback(null, `${file.originalname}-enviado-${Date.now()}`)
+  },
 });
 
 const upload = multer({ storage });
