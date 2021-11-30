@@ -1,9 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const multer = require('multer');
+const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
 
 const { PORT } = process.env;
 
@@ -34,9 +35,19 @@ const storage = multer.diskStorage({
   },
 });
 
+const fileExists = (fileName) => {
+  const files = fs.readdirSync(`${__dirname}/uploads`);
+  return files.some((file) => file === fileName);
+};
+
 const fileFilter = (req, file, cb) => {
   if (file.mimetype !== 'image/png') {
     req.fileValidationError = true;
+    return cb(null, false);
+  }
+
+  if (fileExists(file.originalname)) {
+    req.fileDuplicated = true;
     return cb(null, false);
   }
 
@@ -53,6 +64,7 @@ app.post(
   controllers.uploadFile,
 );
 
+app.use(express.static(`${__dirname}/uploads`));
 app.use(middlewares.error);
 
 app.listen(PORT, () => {
