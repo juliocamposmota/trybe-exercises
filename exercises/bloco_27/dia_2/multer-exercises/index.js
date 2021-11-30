@@ -30,11 +30,20 @@ const storage = multer.diskStorage({
     callback(null, 'uploads')
   },
   filename: (_req, file, callback) => {
-    callback(null, `${file.originalname}-enviado-${Date.now()}`)
+    callback(null, `${Date.now()}-${file.originalname}`)
   },
 });
 
-const upload = multer({ storage });
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype !== 'image/png') {
+    req.fileValidationError = true;
+    return cb(null, false);
+  }
+
+  cb(null, true);
+};
+
+const upload = multer({ storage, fileFilter });
 
 app.get('/ping', controllers.ping);
 
