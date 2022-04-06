@@ -12,3 +12,6 @@ class SalesReportCSV(SalesReport):
 
             for item in self.build():
                 csv_writer.writerow(item)
+
+    def get_length(self):
+        return 2

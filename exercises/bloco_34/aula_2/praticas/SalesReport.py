@@ -15,3 +15,7 @@ class SalesReport(ABC):
     @abstractclassmethod
     def serialize(self):
         raise NotImplementedError
+
+    @abstractclassmethod
+    def get_length(self):
+        raise NotImplementedError
