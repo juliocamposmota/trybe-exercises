@@ -1,11 +1,11 @@
+from GzCompressor import GzCompressor
 from abc import ABC, abstractclassmethod
-import gzip
-import json
 
 
 class SalesReport(ABC):
-    def __init__(self, export_file):
+    def __init__(self, export_file, compressor=GzCompressor()):
         self.export_file = export_file
+        self.compressor = compressor
 
     def build(self):
         # lógica sendo omitida dos exemplos
@@ -14,11 +14,14 @@ class SalesReport(ABC):
             {"Coluna 1": "Dado A", "Coluna 2": "Dado B", "Coluna 3": "Dado C"},
         ]
 
-    def compress(self):
-        binary_content = json.dumps(self.build()).encode('utf-8')
+    FILE_EXTENSION = '.json'
 
-        with gzip.open(self.export_file + '.gz', 'wb') as compressed_file:
-            compressed_file.write(binary_content)
+    def get_export_file_name(self):
+        return self.export_file + self.FILE_EXTENSION
+
+    def compress(self):
+        self.serialize()
+        self.compressor.compress(self.get_export_file_name())
 
     @abstractclassmethod
     def serialize(self):
