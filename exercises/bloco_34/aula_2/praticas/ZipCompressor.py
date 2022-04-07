@@ -1,8 +1,11 @@
 from zipfile import ZipFile
-from Compressor import Compressor
+from Serializer import Serializer
 
 
-class ZipCompressor(Compressor):
-    def compress(self, file_name):
-        with ZipFile(file_name + '.zip', 'w') as zip_file:
+class ZipCompressor(Serializer):
+    FILE_PATH = './'
+
+    @classmethod
+    def compress(cls, file_name):
+        with ZipFile(cls.FILE_PATH + file_name + '.zip', 'w') as zip_file:
             zip_file.write(file_name)
