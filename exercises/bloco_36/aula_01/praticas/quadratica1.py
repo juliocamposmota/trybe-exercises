@@ -13,6 +13,9 @@ def multiply_arrays(array1, array2):
     return result
 
 
-meu_array = [1, 2, 3, 4, 5]
+n = 1000
+meu_array = list(range(1, n))
 
 multiply_arrays(meu_array, meu_array)
+
+# time python3 meu_programa.py - para calcular o tempo de execução
