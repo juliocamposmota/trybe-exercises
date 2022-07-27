@@ -7,3 +7,5 @@ def shuffle(numbers, n):
         answer.insert(new_array_index, numbers[index + n])
         new_array_index += 1
     return answer
+
+# Complexidade 0(n)
