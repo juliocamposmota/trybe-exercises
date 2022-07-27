@@ -18,3 +18,5 @@ second_collected_values = [1, 1, 1, 1, 0, 0, 1, 1]
 
 print(verify_max_time_ok(first_collected_values))
 print(verify_max_time_ok(second_collected_values))
+
+# Complexidade 0(n)
